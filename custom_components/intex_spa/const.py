@@ -1,32 +1,24 @@
-"""Constants for intex_spa."""
+"""Constants for Intex Spa integration."""
+from datetime import timedelta
+import voluptuous as vol
+
+from homeassistant.const import Platform
+
 # Base component constants
-NAME = "Integration blueprint"
+NAME = "Intex Spa"
 DOMAIN = "intex_spa"
-DOMAIN_DATA = f"{DOMAIN}_data"
+# DOMAIN_DATA = f"{DOMAIN}_data"
 VERSION = "0.0.1"
-ATTRIBUTION = "Data provided by http://jsonplaceholder.typicode.com/"
+# ATTRIBUTION = "Data provided by http://jsonplaceholder.typicode.com/"
 ISSUE_URL = "https://github.com/mathieu-mp/homeassistant-intex-spa/issues"
 
-# Icons
-ICON = "mdi:format-quote-close"
-
-# Device classes
-BINARY_SENSOR_DEVICE_CLASS = "connectivity"
-
 # Platforms
-BINARY_SENSOR = "binary_sensor"
-SENSOR = "sensor"
-SWITCH = "switch"
-PLATFORMS = [BINARY_SENSOR, SENSOR, SWITCH]
-
-
-# Configuration and options
-CONF_ENABLED = "enabled"
-CONF_USERNAME = "username"
-CONF_PASSWORD = "password"
+PLATFORMS: list[Platform] = [
+    Platform.SWITCH,
+]
 
 # Defaults
-DEFAULT_NAME = DOMAIN
+DEFAULT_NAME = NAME
 
 
 STARTUP_MESSAGE = f"""
@@ -38,3 +30,14 @@ If you have any issues with this you need to open an issue here:
 {ISSUE_URL}
 -------------------------------------------------------------------
 """
+
+# API Requests parameters
+SCAN_INTERVAL = timedelta(seconds=30)
+
+# Config flow parameters
+STEP_USER_MAIN_SCHEMA = vol.Schema(
+    {
+        vol.Optional("name", default="Spa"): str,
+        vol.Required("host"): str,
+    }
+)

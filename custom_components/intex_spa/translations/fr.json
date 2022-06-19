@@ -2,7 +2,7 @@
     "config": {
         "step": {
             "user": {
-                "title": "Blueprint",
+                "title": "Intex Spa",
                 "description": "Si vous avez besoin d'aide pour la configuration, regardez ici: https://github.com/mathieu-mp/homeassistant-intex-spa",
                 "data": {
                     "username": "Identifiant",
