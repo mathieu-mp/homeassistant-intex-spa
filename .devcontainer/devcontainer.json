@@ -1,7 +1,7 @@
 // See https://aka.ms/vscode-remote/devcontainer.json for format details.
 {
 	"image": "ghcr.io/ludeeus/devcontainer/integration:stable",
-	"name": "Intex Spa integration development",
+	"name": "Intex Spa integration",
 	"context": "..",
 	"appPort": [
 		"9123:8123"
@@ -12,6 +12,7 @@
 		"github.vscode-pull-request-github",
 		"ryanluker.vscode-coverage-gutters",
 		"ms-python.vscode-pylance",
+		"redhat.vscode-yaml",
 		"tabnine.tabnine-vscode"
 	],
 	"settings": {
