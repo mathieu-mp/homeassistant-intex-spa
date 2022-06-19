@@ -1,0 +1,13 @@
+{
+  "domain": "intex_spa",
+  "name": "Integration blueprint",
+  "documentation": "https://github.com/mathieu-mp/homeassistant-intex-spa",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/mathieu-mp/homeassistant-intex-spa/issues",
+  "version": "0.0.0",
+  "config_flow": true,
+  "codeowners": [
+    "@mathieu-mp",
+    "@Elkropac"
+  ]
+}
