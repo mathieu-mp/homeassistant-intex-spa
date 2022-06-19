@@ -1,11 +1,11 @@
-"""Constants for integration_blueprint."""
+"""Constants for intex_spa."""
 # Base component constants
 NAME = "Integration blueprint"
-DOMAIN = "integration_blueprint"
+DOMAIN = "intex_spa"
 DOMAIN_DATA = f"{DOMAIN}_data"
 VERSION = "0.0.1"
 ATTRIBUTION = "Data provided by http://jsonplaceholder.typicode.com/"
-ISSUE_URL = "https://github.com/custom-components/integration_blueprint/issues"
+ISSUE_URL = "https://github.com/mathieu-mp/homeassistant-intex-spa/issues"
 
 # Icons
 ICON = "mdi:format-quote-close"

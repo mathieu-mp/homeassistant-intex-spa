@@ -1,10 +1,9 @@
 {
-    "name": "Integration blueprint",
+    "name": "Intex Spa",
     "hacs": "1.6.0",
     "domains": [
-        "binary_sensor",
-        "sensor",
+        "climate",
         "switch"
     ],
-    "homeassistant": "0.118.0"
+    "homeassistant": "2022.4.0"
 }

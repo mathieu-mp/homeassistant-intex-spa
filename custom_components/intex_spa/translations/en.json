@@ -3,7 +3,7 @@
         "step": {
             "user": {
                 "title": "Blueprint",
-                "description": "If you need help with the configuration have a look here: https://github.com/custom-components/integration_blueprint",
+                "description": "If you need help with the configuration have a look here: https://github.com/mathieu-mp/homeassistant-intex-spa",
                 "data": {
                     "username": "Username",
                     "password": "Password"

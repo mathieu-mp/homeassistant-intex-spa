@@ -24,21 +24,21 @@ File | Purpose
 `.github/ISSUE_TEMPLATE/feature_request.md` | Template for Feature Requests
 `.github/ISSUE_TEMPLATE/issue.md` | Template for issues
 `.vscode/tasks.json` | Tasks for the devcontainer.
-`custom_components/integration_blueprint/translations/*` | [Translation files.](https://developers.home-assistant.io/docs/internationalization/custom_integration)
-`custom_components/integration_blueprint/__init__.py` | The component file for the integration.
-`custom_components/integration_blueprint/api.py` | This is a sample API client.
-`custom_components/integration_blueprint/binary_sensor.py` | Binary sensor platform for the integration.
-`custom_components/integration_blueprint/config_flow.py` | Config flow file, this adds the UI configuration possibilities.
-`custom_components/integration_blueprint/const.py` | A file to hold shared variables/constants for the entire integration.
-`custom_components/integration_blueprint/manifest.json` | A [manifest file](https://developers.home-assistant.io/docs/en/creating_integration_manifest.html) for Home Assistant.
-`custom_components/integration_blueprint/sensor.py` | Sensor platform for the integration.
-`custom_components/integration_blueprint/switch.py` | Switch sensor platform for the integration.
+`custom_components/intex_spa/translations/*` | [Translation files.](https://developers.home-assistant.io/docs/internationalization/custom_integration)
+`custom_components/intex_spa/__init__.py` | The component file for the integration.
+`custom_components/intex_spa/api.py` | This is a sample API client.
+`custom_components/intex_spa/binary_sensor.py` | Binary sensor platform for the integration.
+`custom_components/intex_spa/config_flow.py` | Config flow file, this adds the UI configuration possibilities.
+`custom_components/intex_spa/const.py` | A file to hold shared variables/constants for the entire integration.
+`custom_components/intex_spa/manifest.json` | A [manifest file](https://developers.home-assistant.io/docs/en/creating_integration_manifest.html) for Home Assistant.
+`custom_components/intex_spa/sensor.py` | Sensor platform for the integration.
+`custom_components/intex_spa/switch.py` | Switch sensor platform for the integration.
 `tests/__init__.py` | Makes the `tests` folder a module.
 `tests/conftest.py` | Global [fixtures](https://docs.pytest.org/en/stable/fixture.html) used in tests to [patch](https://docs.python.org/3/library/unittest.mock.html#unittest.mock.patch) functions.
-`tests/test_api.py` | Tests for `custom_components/integration_blueprint/api.py`.
-`tests/test_config_flow.py` | Tests for `custom_components/integration_blueprint/config_flow.py`.
-`tests/test_init.py` | Tests for `custom_components/integration_blueprint/__init__.py`.
-`tests/test_switch.py` | Tests for `custom_components/integration_blueprint/switch.py`.
+`tests/test_api.py` | Tests for `custom_components/intex_spa/api.py`.
+`tests/test_config_flow.py` | Tests for `custom_components/intex_spa/config_flow.py`.
+`tests/test_init.py` | Tests for `custom_components/intex_spa/__init__.py`.
+`tests/test_switch.py` | Tests for `custom_components/intex_spa/switch.py`.
 `CONTRIBUTING.md` | Guidelines on how to contribute.
 `example.png` | Screenshot that demonstrate how it might look in the UI.
 `info.md` | An example on a info file (used by [hacs][hacs]).
@@ -72,27 +72,20 @@ to ensure Home Assistant update the code of the python library. (example `"requi
 README content if this was a published component:
 ***
 
-# integration_blueprint
-
-[![GitHub Release][releases-shield]][releases]
-[![GitHub Activity][commits-shield]][commits]
-[![License][license-shield]](LICENSE)
+# intex_spa
 
 [![hacs][hacsbadge]][hacs]
+[![GitHub Release][releases-shield]][releases]
 ![Project Maintenance][maintenance-shield]
-[![BuyMeCoffee][buymecoffeebadge]][buymecoffee]
 
-[![Discord][discord-shield]][discord]
-[![Community Forum][forum-shield]][forum]
-
-_Component to integrate with [integration_blueprint][integration_blueprint]._
+_Component to integrate with [intex_spa][intex_spa]._
 
 **This component will set up the following platforms.**
 
 Platform | Description
 -- | --
 `binary_sensor` | Show something `True` or `False`.
-`sensor` | Show info from blueprint API.
+`sensor` | Show info from Intex Spa API.
 `switch` | Switch something `True` or `False`.
 
 ![example][exampleimg]
@@ -101,26 +94,26 @@ Platform | Description
 
 1. Using the tool of choice open the directory (folder) for your HA configuration (where you find `configuration.yaml`).
 2. If you do not have a `custom_components` directory (folder) there, you need to create it.
-3. In the `custom_components` directory (folder) create a new folder called `integration_blueprint`.
-4. Download _all_ the files from the `custom_components/integration_blueprint/` directory (folder) in this repository.
+3. In the `custom_components` directory (folder) create a new folder called `intex_spa`.
+4. Download _all_ the files from the `custom_components/intex_spa/` directory (folder) in this repository.
 5. Place the files you downloaded in the new directory (folder) you created.
 6. Restart Home Assistant
-7. In the HA UI go to "Configuration" -> "Integrations" click "+" and search for "Integration blueprint"
+7. In the HA UI go to "Configuration" -> "Integrations" click "+" and search for "Intex Spa"
 
 Using your HA configuration directory (folder) as a starting point you should now also have this:
 
 ```text
-custom_components/integration_blueprint/translations/en.json
-custom_components/integration_blueprint/translations/nb.json
-custom_components/integration_blueprint/translations/sensor.nb.json
-custom_components/integration_blueprint/__init__.py
-custom_components/integration_blueprint/api.py
-custom_components/integration_blueprint/binary_sensor.py
-custom_components/integration_blueprint/config_flow.py
-custom_components/integration_blueprint/const.py
-custom_components/integration_blueprint/manifest.json
-custom_components/integration_blueprint/sensor.py
-custom_components/integration_blueprint/switch.py
+custom_components/intex_spa/translations/en.json
+custom_components/intex_spa/translations/nb.json
+custom_components/intex_spa/translations/sensor.nb.json
+custom_components/intex_spa/__init__.py
+custom_components/intex_spa/api.py
+custom_components/intex_spa/binary_sensor.py
+custom_components/intex_spa/config_flow.py
+custom_components/intex_spa/const.py
+custom_components/intex_spa/manifest.json
+custom_components/intex_spa/sensor.py
+custom_components/intex_spa/switch.py
 ```
 
 ## Configuration is done in the UI
@@ -133,19 +126,10 @@ If you want to contribute to this please read the [Contribution guidelines](CONT
 
 ***
 
-[integration_blueprint]: https://github.com/custom-components/integration_blueprint
-[buymecoffee]: https://www.buymeacoffee.com/ludeeus
-[buymecoffeebadge]: https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg?style=for-the-badge
-[commits-shield]: https://img.shields.io/github/commit-activity/y/custom-components/blueprint.svg?style=for-the-badge
-[commits]: https://github.com/custom-components/integration_blueprint/commits/master
+[intex_spa]: https://github.com/mathieu-mp/homeassistant-intex-spa
 [hacs]: https://github.com/custom-components/hacs
-[hacsbadge]: https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge
-[discord]: https://discord.gg/Qa5fW2R
-[discord-shield]: https://img.shields.io/discord/330944238910963714.svg?style=for-the-badge
+[hacsbadge]: https://img.shields.io/badge/HACS-Custom-41BDF5.svg
 [exampleimg]: example.png
-[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
-[forum]: https://community.home-assistant.io/
-[license-shield]: https://img.shields.io/github/license/custom-components/blueprint.svg?style=for-the-badge
-[maintenance-shield]: https://img.shields.io/badge/maintainer-Joakim%20Sørensen%20%40ludeeus-blue.svg?style=for-the-badge
-[releases-shield]: https://img.shields.io/github/release/custom-components/blueprint.svg?style=for-the-badge
-[releases]: https://github.com/custom-components/integration_blueprint/releases
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2022.svg
+[releases-shield]: https://img.shields.io/github/release/mathieu-mp/homeassistant-intex-spa.svg
+[releases]: https://github.com/mathieu-mp/homeassistant-intex-spa/releases

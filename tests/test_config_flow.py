@@ -1,11 +1,11 @@
-"""Test integration_blueprint config flow."""
+"""Test intex_spa config flow."""
 from unittest.mock import patch
 
 from homeassistant import config_entries, data_entry_flow
 import pytest
 from pytest_homeassistant_custom_component.common import MockConfigEntry
 
-from custom_components.integration_blueprint.const import (
+from custom_components.intex_spa.const import (
     BINARY_SENSOR,
     DOMAIN,
     PLATFORMS,
@@ -22,11 +22,8 @@ from .const import MOCK_CONFIG
 @pytest.fixture(autouse=True)
 def bypass_setup_fixture():
     """Prevent setup."""
-    with patch(
-        "custom_components.integration_blueprint.async_setup",
-        return_value=True,
-    ), patch(
-        "custom_components.integration_blueprint.async_setup_entry",
+    with patch("custom_components.intex_spa.async_setup", return_value=True,), patch(
+        "custom_components.intex_spa.async_setup_entry",
         return_value=True,
     ):
         yield
