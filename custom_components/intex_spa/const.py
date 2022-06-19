@@ -14,6 +14,7 @@ ISSUE_URL = "https://github.com/mathieu-mp/homeassistant-intex-spa/issues"
 
 # Platforms
 PLATFORMS: list[Platform] = [
+    Platform.CLIMATE,
     Platform.SWITCH,
 ]
 
