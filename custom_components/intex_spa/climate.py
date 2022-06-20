@@ -4,7 +4,11 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
-from homeassistant.const import ATTR_TEMPERATURE, TEMP_CELSIUS
+from homeassistant.const import (
+    ATTR_TEMPERATURE,
+    TEMP_CELSIUS,
+    TEMP_FAHRENHEIT,
+)
 from homeassistant.components.climate.const import (
     HVAC_MODE_HEAT,
     HVAC_MODE_OFF,
@@ -26,14 +30,13 @@ async def async_setup_entry(
 ) -> None:
     """Add switches for passed entry in HA."""
     coordinator: IntexSpaDataUpdateCoordinator = hass.data[DOMAIN][entry.entry_id]
-    await coordinator.async_config_entry_first_refresh()
 
     async_add_entities(
         [
             IntexSpaClimate(
                 coordinator,
                 entry,
-                icon="mdi:power-plug-outline",
+                icon="mdi:pool-thermometer",
             )
         ]
     )
@@ -42,17 +45,12 @@ async def async_setup_entry(
 class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
     """Intex Spa climate class."""
 
-    _attr_name = "SPA climate"
     _attr_hvac_modes = [
         HVAC_MODE_HEAT,
         HVAC_MODE_OFF,
     ]
-    # TODO: Adapt min, max, and units depending on the actual unit of the spa
-    _attr_min_temp = 20
-    _attr_max_temp = 40
     _attr_supported_features = SUPPORT_TARGET_TEMPERATURE
     _attr_target_temperature_step = 1
-    _attr_temperature_unit = TEMP_CELSIUS
 
     def __init__(
         self,
@@ -70,14 +68,33 @@ class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
         )
 
     @property
-    def unit_of_measurement(self):
-        """Return the unit of measurement of this entity, if any."""
-        return TEMP_CELSIUS
+    def temperature_unit(self):
+        """Return the unit of measurement of this entity."""
+        if self.coordinator.data.unit == "°C":
+            return TEMP_CELSIUS
+        else:
+            return TEMP_FAHRENHEIT
 
     @property
     def current_temperature(self):
         """Return the state of the sensor."""
         return self.coordinator.data.current_temp
+
+    @property
+    def min_temp(self):
+        """Return the minimum temperature."""
+        if self.temperature_unit == TEMP_CELSIUS:
+            return 20
+        else:
+            return 50
+
+    @property
+    def max_temp(self):
+        """Return the maximum temperature.."""
+        if self.temperature_unit == TEMP_CELSIUS:
+            return 40
+        else:
+            return 104
 
     @property
     def target_temperature(self):
