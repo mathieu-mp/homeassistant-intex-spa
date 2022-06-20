@@ -49,12 +49,12 @@ Configuration is done via Home Assistant interface.
 
 Contributions are welcome :
 * If you face an issue
-* If you want to translate the integration to your langage
+* If you want to translate the integration to your language
 * If you want to contribute in any way
 
 ...please read the [Contribution guidelines](CONTRIBUTING.md).
 
-***
+<!-- Links -->
 
 [license]: LICENSE
 [intex_spa_package]: https://github.com/mathieu-mp/intex-spa
