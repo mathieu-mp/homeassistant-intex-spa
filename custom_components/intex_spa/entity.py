@@ -6,7 +6,7 @@ from .const import (
     NAME,
     VERSION,
     DEFAULT_NAME,
-    # ATTRIBUTION,
+    PARALLEL_UPDATES,
 )
 
 
