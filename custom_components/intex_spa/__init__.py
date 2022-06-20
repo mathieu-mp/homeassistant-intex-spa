@@ -40,7 +40,8 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
 
     api = IntexSpa(entry.data["host"])
     coordinator = IntexSpaDataUpdateCoordinator(hass, api=api)
-    await coordinator.async_refresh()
+    # await coordinator.async_refresh()
+    await coordinator.async_config_entry_first_refresh()
 
     if not coordinator.last_update_success:
         raise ConfigEntryNotReady

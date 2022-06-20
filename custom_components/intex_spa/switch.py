@@ -18,7 +18,6 @@ async def async_setup_entry(
 ) -> None:
     """Add switches for passed entry in HA."""
     coordinator: IntexSpaDataUpdateCoordinator = hass.data[DOMAIN][entry.entry_id]
-    await coordinator.async_config_entry_first_refresh()
 
     async_add_entities(
         [
@@ -59,7 +58,13 @@ async def async_setup_entry(
 class IntexSpaSwitch(IntexSpaEntity, SwitchEntity):
     """Intex Spa generic switch class."""
 
-    def __init__(self, coordinator, entry, icon: str, switch: str):
+    def __init__(
+        self,
+        coordinator: IntexSpaDataUpdateCoordinator,
+        entry,
+        icon: str,
+        switch: str,
+    ):
         super().__init__(coordinator, entry, icon)
         self._switch_type = switch.lower()
 
