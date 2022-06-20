@@ -1,9 +1,5 @@
 {
     "name": "Intex Spa",
     "hacs": "1.6.0",
-    "domains": [
-        "climate",
-        "switch"
-    ],
     "homeassistant": "2022.4.0"
 }
