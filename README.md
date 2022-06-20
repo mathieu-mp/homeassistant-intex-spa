@@ -4,14 +4,29 @@
 [![GitHub Release][releases-shield]][releases]
 ![Project Maintenance][maintenance-shield]
 
-**This component will set up the following platforms.**
+## Disclaimers
+Intex brand is not involved in any way with this integration.
 
-Platform | Description
--- | --
-`climate` | Climate controller for water heating
-`switch` | Switches for all spa features
+Please read the [license] file before use, and the manufacturer documentation.
 
-<!--![example][exampleimg]-->
+## What it does
+This component relies on [Intex Spa Python package][intex_spa_package].\
+It connects to your spa via your local network, and does not rely on the cloud.
+
+This component will set up the following entites:
+
+Platform | Entity | Description
+-- | -- | --
+`climate` | Climate | Climate controller for water heating
+`switch` | Jets | Switch for toggling jets
+`switch` | Bubbles | Switch for toggling bubbles
+`switch` | Power | Switch for toggling power state
+`switch` | Filter | Switch for toggling water filtering
+`switch` | Sanitizer | Switch for toggling water electrolysis
+
+## Dashboard example
+
+![Screenshot][screenshot_img]
 
 ## Installation
 
@@ -30,16 +45,22 @@ Configuration is done via Home Assistant interface.
 1. Search for "Intex Spa" -> Select it
 1. Fill in the local IP or FQDN of your spa
 
-## Bug Reports & Contributions are welcome!
+## Contributions
 
-If you face an issue or want to contribute to this, please read the [Contribution guidelines](CONTRIBUTING.md).
+Contributions are welcome :
+* If you face an issue
+* If you want to translate the integration to your langage
+* If you want to contribute in any way
+
+...please read the [Contribution guidelines](CONTRIBUTING.md).
 
 ***
 
-[intex_spa]: https://github.com/mathieu-mp/homeassistant-intex-spa
+[license]: LICENSE
+[intex_spa_package]: https://github.com/mathieu-mp/intex-spa
 [hacs]: https://hacs.xyz/
 [hacsbadge]: https://img.shields.io/badge/HACS-Custom-41BDF5.svg
-[exampleimg]: example.png
+[screenshot_img]: screenshot_fr.png
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2022.svg
 [releases-shield]: https://img.shields.io/github/release/mathieu-mp/homeassistant-intex-spa.svg
 [releases]: https://github.com/mathieu-mp/homeassistant-intex-spa/releases
