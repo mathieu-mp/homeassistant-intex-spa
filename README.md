@@ -60,7 +60,7 @@ Contributions are welcome :
 [intex_spa_package]: https://github.com/mathieu-mp/intex-spa
 [hacs]: https://hacs.xyz/
 [hacsbadge]: https://img.shields.io/badge/HACS-Custom-41BDF5.svg
-[screenshot_img]: screenshot_fr.png
+[screenshot_img]: https://raw.githubusercontent.com/mathieu-mp/homeassistant-intex-spa/main/screenshot_fr.png
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2022.svg
 [releases-shield]: https://img.shields.io/github/release/mathieu-mp/homeassistant-intex-spa.svg
 [releases]: https://github.com/mathieu-mp/homeassistant-intex-spa/releases
