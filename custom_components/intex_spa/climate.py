@@ -15,12 +15,15 @@ from homeassistant.components.climate.const import (
     SUPPORT_TARGET_TEMPERATURE,
 )
 
+from .entity import IntexSpaEntity
+from . import IntexSpaDataUpdateCoordinator
 from .const import (
     DOMAIN,
     DEFAULT_NAME,
+    DEFAULT_PARALLEL_UPDATES,
 )
-from .entity import IntexSpaEntity
-from . import IntexSpaDataUpdateCoordinator
+
+PARALLEL_UPDATES = DEFAULT_PARALLEL_UPDATES
 
 
 async def async_setup_entry(
