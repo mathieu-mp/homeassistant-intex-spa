@@ -55,7 +55,7 @@ class IntexSpaMainFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
 
     async def async_step_user(
         self,
-        user_input: dict[str, Any] | None = None,
+        user_input: dict[str, Any] = None,
     ) -> FlowResult:
         """Handle a flow initialized by the user."""
         if user_input is None:
