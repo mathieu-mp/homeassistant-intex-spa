@@ -6,8 +6,10 @@ from .const import (
     NAME,
     VERSION,
     DEFAULT_NAME,
-    # ATTRIBUTION,
+    DEFAULT_PARALLEL_UPDATES,
 )
+
+PARALLEL_UPDATES = DEFAULT_PARALLEL_UPDATES
 
 
 class IntexSpaEntity(CoordinatorEntity):
