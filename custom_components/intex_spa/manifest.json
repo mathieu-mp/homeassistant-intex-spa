@@ -7,7 +7,7 @@
   "version": "0.0.0",
   "config_flow": true,
   "requirements": [
-    "intex-spa==0.4.1"
+    "intex-spa==0.5.1"
   ],
   "codeowners": [
     "@mathieu-mp",
