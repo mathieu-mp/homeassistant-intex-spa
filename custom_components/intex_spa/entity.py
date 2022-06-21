@@ -42,3 +42,10 @@ class IntexSpaEntity(CoordinatorEntity):
     #         "id": str(self.coordinator.data.get("id")),
     #         "integration": DOMAIN,
     #     }
+
+    @property
+    def available(self):
+        if self.coordinator.data.error_code is False:
+            return True
+        else:
+            return False
