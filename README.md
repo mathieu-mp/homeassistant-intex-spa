@@ -45,6 +45,10 @@ Configuration is done via Home Assistant interface.
 1. Search for "Intex Spa" -> Select it
 1. Fill in the local IP or FQDN of your spa
 
+## Dashboard
+
+This integration does not provide additional dashboard cards... Dashboard creation is up to you !
+
 ## Contributions
 
 Contributions are welcome :
