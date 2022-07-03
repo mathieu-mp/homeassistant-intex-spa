@@ -45,7 +45,9 @@ class IntexSpaEntity(CoordinatorEntity):
 
     @property
     def available(self):
-        if self.coordinator.data.error_code is False:
+        if not self.coordinator.last_update_success:
+            return False
+        elif self.coordinator.data.error_code is False:
             return True
         else:
             return False

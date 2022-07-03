@@ -3,9 +3,6 @@
 import logging
 from typing import Any
 
-# Data Validation
-import socket
-
 # Home Assistant
 from homeassistant import config_entries
 from homeassistant.core import HomeAssistant
@@ -13,7 +10,7 @@ from homeassistant.data_entry_flow import FlowResult
 from homeassistant.exceptions import HomeAssistantError
 
 # Custom Integration
-from intex_spa import IntexSpa
+from intex_spa import IntexSpa, IntexSpaDnsException
 from .const import (
     STEP_USER_MAIN_SCHEMA,
     DOMAIN,
@@ -32,16 +29,12 @@ async def validate_input(
     intex_spa = IntexSpa(data["host"])
     try:
         await intex_spa.async_update_status()
-    # TODO: ConnectionRefusedError
-    # TODO: Move exception handling to python package
-    except socket.gaierror as err:
-        if err.args[0] == socket.EAI_NONAME:
-            raise DnsNotKnown from err
-        else:
-            raise Exception from err
 
-    if not intex_spa.is_available:
-        raise CannotConnect
+    except IntexSpaDnsException as err:
+        raise DnsNotKnown from err
+
+    except Exception as err:
+        raise CannotConnect from err
 
     # Return info that you want to store in the config entry.
     return {"title": data["name"]}
