@@ -63,12 +63,8 @@ class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
     ):
         super().__init__(coordinator, entry, icon)
 
-        self._attr_name = "{0} Climate".format(
-            self.entry.data.get("name", DEFAULT_NAME),
-        )
-        self._attr_unique_id = "{0}".format(
-            self.entry.entry_id,
-        )
+        self._attr_name = self.entry.data.get("name", DEFAULT_NAME)
+        self._attr_unique_id = self.entry.entry_id
 
     @property
     def temperature_unit(self):
