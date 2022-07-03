@@ -87,10 +87,10 @@ class IntexSpaErrorSensor(IntexSpaEntity, SensorEntity):
         else:
             return "None"
 
-    # Redefine the super class 'available' property
+    # Redefine the super class IntexSpaEntity 'available' property
     @property
     def available(self):
-        return True
+        return self.coordinator.last_update_success
 
     @property
     def icon(self):

@@ -66,7 +66,7 @@ class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
         self._attr_name = "{0} Climate".format(
             self.entry.data.get("name", DEFAULT_NAME),
         )
-        self._attr_unique_id = "{0}_climate".format(
+        self._attr_unique_id = "{0}".format(
             self.entry.entry_id,
         )
 
