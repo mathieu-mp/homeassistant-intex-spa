@@ -93,17 +93,6 @@ class IntexSpaSwitch(IntexSpaEntity, SwitchEntity):
         status = await self.coordinator.api.async_set(self._switch_type, False)
         self.coordinator.async_set_updated_data(status)
 
-    # @property
-    # def unique_id(self):
-    #     """Return a unique ID to use for this entity."""
-    #     return self.entry.entry_id
-
-    # @property
-    # def name(self):
-    #     """Return the name of the switch."""
-    #     # return f"{self.entry.data.get('name', DEFAULT_NAME)} Power"
-    #     return
-
     @property
     def is_on(self):
         """Return true if the switch is on."""
