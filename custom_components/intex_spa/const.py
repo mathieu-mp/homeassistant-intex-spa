@@ -41,6 +41,6 @@ DEFAULT_PARALLEL_UPDATES = 1
 STEP_USER_MAIN_SCHEMA = vol.Schema(
     {
         vol.Optional("name", default="Spa"): str,
-        vol.Required("host"): str,
+        vol.Required("host", default="SPA_DEVICE"): str,
     }
 )
