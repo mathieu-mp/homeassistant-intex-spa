@@ -61,7 +61,7 @@ class IntexSpaMainFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
         try:
             info = await validate_input(self.hass, user_input)
         except CannotConnect:
-            errors["base"] = "cannot_connect"
+            errors["host"] = "cannot_connect"
         except DnsNotKnown:
             errors["host"] = "dns_not_known"
         except Exception:  # pylint: disable=broad-except

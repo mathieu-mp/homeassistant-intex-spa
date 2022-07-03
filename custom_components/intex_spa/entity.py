@@ -20,11 +20,6 @@ class IntexSpaEntity(CoordinatorEntity):
         self.entry = entry
         self._attr_icon = icon
 
-    # @property
-    # def unique_id(self):
-    #     """Return a unique ID to use for this entity."""
-    #     return self.config_entry.entry_id
-
     @property
     def device_info(self):
         return {
@@ -33,15 +28,6 @@ class IntexSpaEntity(CoordinatorEntity):
             "model": VERSION,
             "manufacturer": NAME,
         }
-
-    # @property
-    # def extra_state_attributes(self):
-    #     """Return the state attributes."""
-    #     return {
-    #         "attribution": ATTRIBUTION,
-    #         "id": str(self.coordinator.data.get("id")),
-    #         "integration": DOMAIN,
-    #     }
 
     @property
     def available(self):

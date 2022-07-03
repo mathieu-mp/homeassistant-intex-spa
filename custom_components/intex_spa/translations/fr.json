@@ -1,29 +1,19 @@
 {
     "config": {
-        "step": {
-            "user": {
-                "title": "Intex Spa",
-                "description": "Si vous avez besoin d'aide pour la configuration, regardez ici: https://github.com/mathieu-mp/homeassistant-intex-spa",
-                "data": {
-                    "username": "Identifiant",
-                    "password": "Mot de Passe"
-                }
-            }
+        "abort": {
+            "already_configured": "Device is already configured"
         },
         "error": {
-            "auth": "Identifiant ou mot de passe erroné."
+            "cannot_connect": "Echec de connection",
+            "dns_not_known": "Impossible de résoudre le nom DNS",
+            "unknown": "Erreur inattendue"
         },
-        "abort": {
-            "single_instance_allowed": "Une seule instance est autorisée."
-        }
-    },
-    "options": {
         "step": {
             "user": {
+                "description": "Si vous avez besoin d'aide pour la configuration: https://github.com/mathieu-mp/homeassistant-intex-spa",
                 "data": {
-                    "binary_sensor": "Capteur binaire activé",
-                    "sensor": "Capteur activé",
-                    "switch": "Interrupteur activé"
+                    "name": "Nom du spa",
+                    "host": "Host"
                 }
             }
         }
