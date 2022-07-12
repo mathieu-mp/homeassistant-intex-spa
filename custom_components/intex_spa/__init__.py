@@ -42,6 +42,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
     api = IntexSpa(entry.data["host"])
     coordinator = IntexSpaDataUpdateCoordinator(hass, api=api)
     await coordinator.async_config_entry_first_refresh()
+    await coordinator.async_update_info()
     hass.data[DOMAIN][entry.entry_id] = coordinator
 
     hass.config_entries.async_setup_platforms(entry, PLATFORMS)
@@ -58,13 +59,23 @@ class IntexSpaDataUpdateCoordinator(DataUpdateCoordinator):
         """Initialize."""
         self.api: IntexSpa = api
         self.platforms = []
+        self.info = {}
 
         super().__init__(hass, _LOGGER, name=DOMAIN, update_interval=SCAN_INTERVAL)
 
     async def _async_update_data(self):
-        """Update data via library."""
+        """Update data via intex-spa python library"""
         try:
             return await self.api.async_update_status()
+        except (IntexSpaUnreachableException, IntexSpaDnsException) as exception:
+            raise UpdateFailed(exception) from exception
+        except Exception as exception:
+            raise NotImplementedError from exception
+
+    async def async_update_info(self):
+        """Update info via intex-spa python library"""
+        try:
+            self.info = await self.api.async_update_info()
         except (IntexSpaUnreachableException, IntexSpaDnsException) as exception:
             raise UpdateFailed(exception) from exception
         except Exception as exception:

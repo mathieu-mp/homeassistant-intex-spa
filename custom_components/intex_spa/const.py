@@ -7,9 +7,7 @@ from homeassistant.const import Platform
 # Base component constants
 NAME = "Intex Spa"
 DOMAIN = "intex_spa"
-# DOMAIN_DATA = f"{DOMAIN}_data"
 VERSION = "0.0.1"
-# ATTRIBUTION = "Data provided by http://jsonplaceholder.typicode.com/"
 ISSUE_URL = "https://github.com/mathieu-mp/homeassistant-intex-spa/issues"
 
 # Platforms

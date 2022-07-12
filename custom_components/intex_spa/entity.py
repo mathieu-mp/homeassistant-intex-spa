@@ -1,10 +1,11 @@
 """BlueprintEntity class"""
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
+from homeassistant.config_entries import ConfigEntry
+from . import IntexSpaDataUpdateCoordinator
 
 from .const import (
     DOMAIN,
     NAME,
-    VERSION,
     DEFAULT_NAME,
     DEFAULT_PARALLEL_UPDATES,
 )
@@ -15,7 +16,12 @@ PARALLEL_UPDATES = DEFAULT_PARALLEL_UPDATES
 class IntexSpaEntity(CoordinatorEntity):
     """Class to inherit from all Intex Spa entities."""
 
-    def __init__(self, coordinator, entry, icon: str):
+    def __init__(
+        self,
+        coordinator: IntexSpaDataUpdateCoordinator,
+        entry: ConfigEntry,
+        icon: str,
+    ):
         super().__init__(coordinator)
         self.entry = entry
         self._attr_icon = icon
@@ -23,9 +29,15 @@ class IntexSpaEntity(CoordinatorEntity):
     @property
     def device_info(self):
         return {
-            "identifiers": {(DOMAIN, self.entry.data.get("name", DEFAULT_NAME))},
+            "identifiers": {
+                # Serial numbers are unique identifiers within a specific domain
+                (
+                    DOMAIN,
+                    self.coordinator.info.uid,
+                )
+            },
             "name": self.entry.data.get("name", DEFAULT_NAME),
-            "model": VERSION,
+            "model": self.entry.data.get("name", DEFAULT_NAME),
             "manufacturer": NAME,
         }
 

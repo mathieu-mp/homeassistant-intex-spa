@@ -26,9 +26,9 @@ async def validate_input(
 
     Data has the keys from STEP_USER_MAIN_SCHEMA with values provided by the user.
     """
-    intex_spa = IntexSpa(data["host"])
     try:
-        await intex_spa.async_update_status()
+        intex_spa = IntexSpa(data["host"])
+        await intex_spa.async_update_info()
 
     except IntexSpaDnsException as err:
         raise DnsNotKnown from err
@@ -36,8 +36,9 @@ async def validate_input(
     except Exception as err:
         raise CannotConnect from err
 
-    # Return info that you want to store in the config entry.
-    return {"title": data["name"]}
+    else:
+        # Return data to store in the config entry.
+        return data
 
 
 class IntexSpaMainFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
@@ -59,7 +60,7 @@ class IntexSpaMainFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
         errors = {}
 
         try:
-            info = await validate_input(self.hass, user_input)
+            validated_data = await validate_input(self.hass, user_input)
         except CannotConnect:
             errors["host"] = "cannot_connect"
         except DnsNotKnown:
@@ -68,7 +69,11 @@ class IntexSpaMainFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
             _LOGGER.exception("Unexpected exception")
             errors["base"] = "unknown"
         else:
-            return self.async_create_entry(title=info["title"], data=user_input)
+            # Create the entry with the return values from validate_input
+            return self.async_create_entry(
+                title=validated_data["name"],
+                data=validated_data,
+            )
 
         return self.async_show_form(
             step_id="user", data_schema=STEP_USER_MAIN_SCHEMA, errors=errors

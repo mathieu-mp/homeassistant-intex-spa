@@ -67,21 +67,16 @@ class IntexSpaSwitch(IntexSpaEntity, SwitchEntity):
     def __init__(
         self,
         coordinator: IntexSpaDataUpdateCoordinator,
-        entry,
+        entry: ConfigEntry,
         icon: str,
         switch: str,
     ):
         super().__init__(coordinator, entry, icon)
         self._switch_type = switch.lower()
 
-        self._attr_name = "{0} {1}".format(
-            self.entry.data.get("name", DEFAULT_NAME),
-            switch,
-        )
-        self._attr_unique_id = "{0}_{1}".format(
-            self.entry.entry_id,
-            self._switch_type,
-        )
+        name_or_default_name = self.entry.data.get("name", DEFAULT_NAME)
+        self._attr_name = f"{name_or_default_name} {switch}"
+        self._attr_unique_id = f"{self.entry.entry_id} {self._switch_type}"
 
     async def async_turn_on(self, **kwargs):  # pylint: disable=unused-argument
         """Turn on the switch."""

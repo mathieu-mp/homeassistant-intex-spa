@@ -58,7 +58,7 @@ class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
     def __init__(
         self,
         coordinator: IntexSpaDataUpdateCoordinator,
-        entry,
+        entry: ConfigEntry,
         icon: str,
     ):
         super().__init__(coordinator, entry, icon)
