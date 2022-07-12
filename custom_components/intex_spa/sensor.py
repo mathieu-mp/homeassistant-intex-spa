@@ -51,10 +51,44 @@ async def async_setup_entry(
                 icon="mdi:alert-circle-outline",
                 name="Error Code",
                 entity="error_code",
-                enabled_by_default=False,
+                is_enabled=False,
+            ),
+            IntexSpaUidSensor(
+                coordinator,
+                entry,
+                icon="mdi:identifier",
             ),
         ]
     )
+
+
+class IntexSpaUidSensor(IntexSpaEntity, SensorEntity):
+    """Intex Spa generic switch class."""
+
+    _attr_entity_category = EntityCategory.DIAGNOSTIC
+
+    def __init__(
+        self,
+        coordinator: IntexSpaDataUpdateCoordinator,
+        entry: ConfigEntry,
+        icon: str,
+    ):
+        super().__init__(coordinator, entry, icon)
+
+        name_or_default_name = self.entry.data.get("name", DEFAULT_NAME)
+        self._attr_name = f"{name_or_default_name} UID"
+        self._attr_unique_id = f"{self.entry.entry_id}_uid"
+        self._attr_entity_registry_enabled_default = False
+
+    @property
+    def native_value(self):
+        """Return the native value of the sensor."""
+        return self.coordinator.info.uid
+
+    # Redefine the super class IntexSpaEntity 'available' property
+    @property
+    def available(self):
+        return self.coordinator.last_update_success
 
 
 class IntexSpaErrorSensor(IntexSpaEntity, SensorEntity):
@@ -65,11 +99,11 @@ class IntexSpaErrorSensor(IntexSpaEntity, SensorEntity):
     def __init__(
         self,
         coordinator: IntexSpaDataUpdateCoordinator,
-        entry,
+        entry: ConfigEntry,
         icon: str,
         name: str,
         entity: str,
-        enabled_by_default: bool = True,
+        is_enabled: bool = True,
     ):
         super().__init__(coordinator, entry, icon)
 
@@ -77,7 +111,7 @@ class IntexSpaErrorSensor(IntexSpaEntity, SensorEntity):
         self._attr_name = f"{name_or_default_name} {name}"
         self._attr_unique_id = f"{self.entry.entry_id}_{entity}"
         self._attr_device_class = f"intex_spa__{entity}"
-        self._attr_entity_registry_enabled_default = enabled_by_default
+        self._attr_entity_registry_enabled_default = is_enabled
 
     @property
     def native_value(self):
