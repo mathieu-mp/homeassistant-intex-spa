@@ -67,7 +67,7 @@ class IntexSpaSwitch(IntexSpaEntity, SwitchEntity):
     def __init__(
         self,
         coordinator: IntexSpaDataUpdateCoordinator,
-        entry,
+        entry: ConfigEntry,
         icon: str,
         switch: str,
     ):

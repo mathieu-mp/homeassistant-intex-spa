@@ -65,7 +65,7 @@ class IntexSpaErrorSensor(IntexSpaEntity, SensorEntity):
     def __init__(
         self,
         coordinator: IntexSpaDataUpdateCoordinator,
-        entry,
+        entry: ConfigEntry,
         icon: str,
         name: str,
         entity: str,
