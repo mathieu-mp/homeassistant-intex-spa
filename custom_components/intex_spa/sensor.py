@@ -80,10 +80,7 @@ class IntexSpaUidSensor(IntexSpaEntity, SensorEntity):
         self._attr_unique_id = f"{self.entry.entry_id}_uid"
         self._attr_entity_registry_enabled_default = False
 
-    @property
-    def native_value(self):
-        """Return the native value of the sensor."""
-        return self.coordinator.info.uid
+        self._attr_native_value = self.coordinator.info.uid
 
     # Redefine the super class IntexSpaEntity 'available' property
     @property
