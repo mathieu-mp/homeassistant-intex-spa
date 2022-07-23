@@ -28,7 +28,7 @@ async def validate_input(
     """
     try:
         intex_spa = IntexSpa(data["host"])
-        await intex_spa.async_update_info()
+        info = await intex_spa.async_update_info()
 
     except IntexSpaDnsException as err:
         raise DnsNotKnown from err
@@ -38,13 +38,13 @@ async def validate_input(
 
     else:
         # Return data to store in the config entry.
-        return data
+        return data, info.uid
 
 
 class IntexSpaMainFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
     """Main config flow for IntexSpa."""
 
-    VERSION = 1
+    VERSION = 2
     CONNECTION_CLASS = config_entries.CONN_CLASS_LOCAL_POLL
 
     async def async_step_user(
@@ -60,7 +60,9 @@ class IntexSpaMainFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
         errors = {}
 
         try:
-            validated_data = await validate_input(self.hass, user_input)
+            validated_data, device_unique_id = await validate_input(
+                self.hass, user_input
+            )
         except CannotConnect:
             errors["host"] = "cannot_connect"
         except DnsNotKnown:
@@ -69,6 +71,10 @@ class IntexSpaMainFlowHandler(config_entries.ConfigFlow, domain=DOMAIN):
             _LOGGER.exception("Unexpected exception")
             errors["base"] = "unknown"
         else:
+            # Set a unique identifier for this config flow and abort if already configured
+            await self.async_set_unique_id(device_unique_id)
+            self._abort_if_unique_id_configured()
+
             # Create the entry with the return values from validate_input
             return self.async_create_entry(
                 title=validated_data["name"],
