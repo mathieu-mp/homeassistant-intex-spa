@@ -33,7 +33,8 @@ If you have any issues with this you need to open an issue here:
 
 # API Requests parameters
 SCAN_INTERVAL = timedelta(seconds=30)
-DEFAULT_PARALLEL_UPDATES = 1
+PARALLEL_UPDATES_ENABLED = 1
+PARALLEL_UPDATES_DISABLED = 0
 
 # Config flow parameters
 STEP_USER_MAIN_SCHEMA = vol.Schema(

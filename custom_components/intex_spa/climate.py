@@ -20,10 +20,10 @@ from . import IntexSpaDataUpdateCoordinator
 from .const import (
     DOMAIN,
     DEFAULT_NAME,
-    DEFAULT_PARALLEL_UPDATES,
+    PARALLEL_UPDATES_DISABLED,
 )
 
-PARALLEL_UPDATES = DEFAULT_PARALLEL_UPDATES
+PARALLEL_UPDATES = PARALLEL_UPDATES_DISABLED
 
 
 async def async_setup_entry(
