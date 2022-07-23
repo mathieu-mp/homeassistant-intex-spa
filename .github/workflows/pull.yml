@@ -3,45 +3,50 @@ name: Pull actions
 on:
   pull_request:
 
+env:
+  PYTHON_VERSION: "3.10"
+
 jobs:
   validate:
     runs-on: "ubuntu-latest"
     name: Validate
     steps:
-        - uses: "actions/checkout@v2"
+      - uses: "actions/checkout@v3"
 
-        - name: HACS validation
-          uses: "hacs/action@main"
-          with:
-            category: "integration"
-            ignore: brands
+      - name: HACS validation
+        uses: "hacs/action@main"
+        with:
+          category: "integration"
+          ignore: brands
 
-        - name: Hassfest validation
-          uses: "home-assistant/actions/hassfest@master"
+      - name: Hassfest validation
+        uses: "home-assistant/actions/hassfest@master"
 
   style:
     runs-on: "ubuntu-latest"
     name: Check style formatting
     steps:
-        - uses: "actions/checkout@v2"
-        - uses: "actions/setup-python@v1"
-          with:
-            python-version: "3.x"
-        - run: python3 -m pip install black
-        - run: black .
+      - uses: "actions/checkout@v3"
+      - uses: "actions/setup-python@v4"
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: python3 -m pip install black
+      - run: black .
 
   tests:
     runs-on: "ubuntu-latest"
     name: Run tests
     steps:
       - name: Check out code from GitHub
-        uses: "actions/checkout@v2"
+        uses: "actions/checkout@v3"
       - name: Setup Python
-        uses: "actions/setup-python@v1"
+        uses: "actions/setup-python@v4"
         with:
-          python-version: "3.8"
+          python-version: ${{ env.PYTHON_VERSION }}
       - name: Install requirements
-        run: python3 -m pip install -r requirements_test.txt
+        run: |
+          python3 -m pip install -r requirements.txt
+          python3 -m pip install -r requirements_test.txt
       - name: Run tests
         run: |
           pytest \
