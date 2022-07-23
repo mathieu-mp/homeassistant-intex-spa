@@ -13,10 +13,10 @@ from . import IntexSpaDataUpdateCoordinator
 from .const import (
     DEFAULT_NAME,
     DOMAIN,
-    DEFAULT_PARALLEL_UPDATES,
+    PARALLEL_UPDATES_DISABLED,
 )
 
-PARALLEL_UPDATES = DEFAULT_PARALLEL_UPDATES
+PARALLEL_UPDATES = PARALLEL_UPDATES_DISABLED
 
 
 # This function is called as part of the __init__.async_setup_entry (via the
