@@ -13,7 +13,9 @@
                 "description": "Si vous avez besoin d'aide pour la configuration: https://github.com/mathieu-mp/homeassistant-intex-spa",
                 "data": {
                     "name": "Nom du spa",
-                    "host": "Host"
+                    "host": "Hostname ou IP",
+                    "has_jets": "Equipé de jets massants",
+                    "has_sanitizer": "Equipé d'un stérilisateur au sel"
                 }
             }
         }

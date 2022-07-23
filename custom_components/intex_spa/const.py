@@ -38,7 +38,9 @@ DEFAULT_PARALLEL_UPDATES = 1
 # Config flow parameters
 STEP_USER_MAIN_SCHEMA = vol.Schema(
     {
-        vol.Optional("name", default="Spa"): str,
+        vol.Required("name", default="Spa"): str,
         vol.Required("host", default="SPA_DEVICE"): str,
+        vol.Required("has_jets", default=True): bool,
+        vol.Required("has_sanitizer", default=True): bool,
     }
 )
