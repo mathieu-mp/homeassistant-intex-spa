@@ -16,6 +16,9 @@
 # pytest includes fixtures OOB which you can use as defined on this page)
 from unittest.mock import patch
 
+from intex_spa.intex_spa_object_info import IntexSpaInfo
+from intex_spa.intex_spa_object_status import IntexSpaStatus
+
 import pytest
 
 pytest_plugins = "pytest_homeassistant_custom_component"
@@ -42,22 +45,51 @@ def skip_notifications_fixture():
 
 # This fixture, when used, will result in calls to async_get_data to return None. To have the call
 # return a value, we would add the `return_value=<VALUE_TO_RETURN>` parameter to the patch call.
-@pytest.fixture(name="bypass_get_data")
-def bypass_get_data_fixture():
+@pytest.fixture(name="bypass_update_info")
+def bypass_get_info_fixture():
     """Skip calls to get data from API."""
+    info = IntexSpaInfo(
+        {"ip": "192.168.0.10", "uid": "0K040210392021030300010000", "dtype": "spa"}
+    )
     with patch(
-        "custom_components.intex_spa.IntegrationBlueprintApiClient.async_get_data"
+        "intex_spa.IntexSpa.async_update_info",
+        return_value=info,
+    ):
+        yield
+
+
+# This fixture, when used, will result in calls to async_get_data to return None. To have the call
+# return a value, we would add the `return_value=<VALUE_TO_RETURN>` parameter to the patch call.
+@pytest.fixture(name="bypass_update_data")
+def bypass_update_data_fixture():
+    """Skip calls to get data from API."""
+    status = IntexSpaStatus(int("0xFFFF110F0107001F0000000080808021000016", 16))
+    with patch(
+        "intex_spa.IntexSpa.async_update_status",
+        return_value=status,
     ):
         yield
 
 
 # In this fixture, we are forcing calls to async_get_data to raise an Exception. This is useful
 # for exception handling.
-@pytest.fixture(name="error_on_get_data")
-def error_get_data_fixture():
+@pytest.fixture(name="error_on_update_info")
+def error_update_info_fixture():
     """Simulate error when retrieving data from API."""
     with patch(
-        "custom_components.intex_spa.IntegrationBlueprintApiClient.async_get_data",
+        "intex_spa.IntexSpa.async_update_info",
+        side_effect=Exception,
+    ):
+        yield
+
+
+# In this fixture, we are forcing calls to async_get_data to raise an Exception. This is useful
+# for exception handling.
+@pytest.fixture(name="error_on_update_data")
+def error_update_data_fixture():
+    """Simulate error when retrieving data from API."""
+    with patch(
+        "intex_spa.IntexSpa.async_update_status",
         side_effect=Exception,
     ):
         yield
