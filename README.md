@@ -67,7 +67,7 @@ Contributions are welcome :
 [license]: LICENSE
 [intex_spa_package]: https://github.com/mathieu-mp/intex-spa
 [hacs]: https://hacs.xyz/
-[hacsbadge]: https://img.shields.io/badge/HACS-Custom-41BDF5.svg
+[hacsbadge]: https://img.shields.io/badge/HACS-Default-41BDF5.svg
 [screenshot_img]: https://raw.githubusercontent.com/mathieu-mp/homeassistant-intex-spa/main/screenshot_fr.png
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2022.svg
 [releases-shield]: https://img.shields.io/github/release/mathieu-mp/homeassistant-intex-spa.svg
