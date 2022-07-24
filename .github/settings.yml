@@ -13,7 +13,7 @@ repository:
   homepage: https://github.com/mathieu-mp/homeassistant-intex-spa
 
   # A comma-separated list of topics to set on the repository
-  topics: homeassistant, integration, intex, purespa, spa, climate, switch
+  topics: homeassistant, integration, intex, purespa, spa, climate, switch, sensor
 
   # Either `true` to make the repository private, or `false` to make it public.
   private: false
