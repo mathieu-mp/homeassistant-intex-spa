@@ -13,16 +13,20 @@ Please read the [license] file before use, and the manufacturer documentation.
 This component relies on [Intex Spa Python package][intex_spa_package].\
 It connects to your spa via your local network, and does not rely on the cloud.
 
-This component will set up the following entites:
+This component will set up the following entities:
 
 Platform | Entity | Description
 -- | -- | --
-`climate` | Climate | Climate controller for water heating
+`climate` | Spa | Climate controller for water heating
 `switch` | Jets | Switch for toggling jets
 `switch` | Bubbles | Switch for toggling bubbles
 `switch` | Power | Switch for toggling power state
 `switch` | Filter | Switch for toggling water filtering
 `switch` | Sanitizer | Switch for toggling water electrolysis
+`sensor` | Error | Eventual error code and explanation
+`sensor` | Error description | Eventual action to take to solve the error
+`sensor` | Error code | Eventual uppercase error code (disabled by default)
+`sensor` | UID | Unique ID of the spa (disabled by default)
 
 ## Dashboard example
 
