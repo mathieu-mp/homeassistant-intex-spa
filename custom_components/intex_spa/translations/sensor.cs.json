@@ -1,0 +1,28 @@
+{
+    "state": {
+        "intex_spa__error": {
+            "None": "None",
+            "E81": "[E81] Chyba vysílacího signálu",
+            "E90": "[E90] Žádný průtok vody",
+            "E91": "[E91] Poplachový kód (Nízká hladina soli)",
+            "E92": "[E92] Poplachový kód (Vysoká hladina soli)",
+            "E94": "[E94] Příliš nízká teplota vody",
+            "E95": "[E95] Příliš vysoká teplota vody",
+            "E96": "[E96] Systémová chyba",
+            "E97": "[E97] Ochrana před požárem",
+            "E99": "[E99] Rozbitý senzor teploty vody"
+        },
+        "intex_spa__error_description": {
+            "None": "None",
+            "E81": "[E81] Ujistěte se, že je lázeň zapnutá a bezdrátový ovládací panel je v dosahu ovládací základny (5m / 16ft)",
+            "E90": "[E90] Zkontrolujte filtrační kartuš a ujistěte se, že nic neucpává cirkulační systém",
+            "E91": "[E91] Přidejte sůl a ujistěte se, že kabel elektrolyzéru je pevně připojen do zásuvky krytu elektrolyzéru",
+            "E92": "[E92] Částečně vypusťte bazén a naplňte ho čerstvou vodou",
+            "E94": "[E94] Přidejte trochu teplé vody, abyste zvýšili teplotu vody v lázni nad 5°C / 41°F",
+            "E95": "[E95] Turn off the heater, check the filter cartridge and ensure nothing is clogging the circulation system",
+            "E96": "[E96] Ovládací jednotku vypněte a odpojte. Zasuňte RCD a proveďte celkový restart",
+            "E97": "[E97] Okamžitě lázeň vypněte a odpojte od sítě. Kontaktujte zákaznický servis Intex"
+            "E99": "[E99] Okamžitě lázeň vypněte a odpojte od sítě. Kontaktujte zákaznický servis Intex"
+        }
+    }
+}
