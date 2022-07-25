@@ -68,6 +68,10 @@ The versioning of this integration follows Semantic Versioning 2.0.0
 
 ***Reminder**: Major version zero (0.y.z) is for initial development. Anything MAY change at any time. The public API SHOULD NOT be considered stable.*
 
+### 0.1.1 - 2022-07-25
+
+Add Czech translation (Thanks @Elkropac!)
+
 ### 0.1.0 - 2022-07-24
 
 ✨ First release
