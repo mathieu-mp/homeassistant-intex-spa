@@ -1,0 +1,28 @@
+{
+    "state": {
+        "intex_spa__error": {
+            "None": "Geen",
+            "E81": "[E81] Transmissie signaal fout",
+            "E90": "[E90] Laag of geen waterstroom",
+            "E91": "[E91] Laag of geen zout niveau",
+            "E92": "[E92] Hoog zout niveau",
+            "E94": "[E94] Water temperatuur te laag",
+            "E95": "[E95] Water temperatuur te hoog",
+            "E96": "[E96] Systeemfout bedienpaneel",
+            "E97": "[E97] Droogloop beveiliging actief",
+            "E99": "[E99] Water temperatuursensor kapot"
+        },
+        "intex_spa__error_description": {
+            "None": "None",
+            "E81": "[E81] Zorg ervoor dat de spa is ingeschakeld en dat het draadloze bedieningspaneel zich binnen het bereik van de bedieningsbasis bevindt (5m / 16ft)",
+            "E90": "[E90] Controleer het filterpatroon en zorg ervoor dat niets het circulatiesysteem verstopt",
+            "E91": "[E91] Voeg meer zout toe en zorg ervoor dat het snoer van de elektrolytische cel goed is aangesloten",
+            "E92": "[E92] Laat de spa gedeeltelijk leeglopen en vul deze opnieuw met vers water",
+            "E94": "[E94] Voeg warm water toe om de spa-temperatuur te verhogen 5°C / 41°F",
+            "E95": "[E95] Zet de verwarming uit, controleer het filterpatroon en zorg ervoor dat niets het circulatiesysteem verstopt",
+            "E96": "[E96] Zet de spa uit en haal de stekker uit het stopcontact. Controleer het ﬁlterpatroon en zorg ervoor dat niets het circulatiesysteem verstopt, start de spa vervolgens opnieuw",
+            "E97": "[E97] Schakel de spa onmiddellijk uit en haal de stekker uit het stopcontact. Neem contact op met het Intex-servicecentrum",
+            "E99": "[E99] Schakel de spa onmiddellijk uit en haal de stekker uit het stopcontact. Neem contact op met het Intex-servicecentrum"
+        }
+    }
+}
