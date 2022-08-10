@@ -1,1 +1,1 @@
-intex-spa==0.8.2
+intex-spa==0.8.3
