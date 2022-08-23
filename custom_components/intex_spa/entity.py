@@ -21,10 +21,12 @@ class IntexSpaEntity(CoordinatorEntity):
         coordinator: IntexSpaDataUpdateCoordinator,
         entry: ConfigEntry,
         icon: str,
+        is_enabled_by_default: bool = True,
     ):
         super().__init__(coordinator)
         self.entry = entry
         self._attr_icon = icon
+        self._attr_entity_registry_enabled_default = is_enabled_by_default
 
     @property
     def device_info(self):
