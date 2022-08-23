@@ -7,6 +7,9 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.entity import EntityCategory
 
+from homeassistant.const import (
+    DEVICE_CLASS_TEMPERATURE,
+)
 
 from .entity import IntexSpaEntity
 from . import IntexSpaDataUpdateCoordinator
@@ -31,6 +34,18 @@ async def async_setup_entry(
 
     async_add_entities(
         [
+            IntexSpaCurrentTemperatureSensor(
+                coordinator,
+                entry,
+                icon="mdi:pool-thermometer",
+                is_enabled_by_default=False,
+            ),
+            IntexSpaUidSensor(
+                coordinator,
+                entry,
+                icon="mdi:identifier",
+                is_enabled_by_default=False,
+            ),
             IntexSpaErrorSensor(
                 coordinator,
                 entry,
@@ -51,19 +66,42 @@ async def async_setup_entry(
                 icon="mdi:alert-circle-outline",
                 name="Error Code",
                 entity="error_code",
-                is_enabled=False,
-            ),
-            IntexSpaUidSensor(
-                coordinator,
-                entry,
-                icon="mdi:identifier",
+                is_enabled_by_default=False,
             ),
         ]
     )
 
 
+class IntexSpaCurrentTemperatureSensor(IntexSpaEntity, SensorEntity):
+    """Intex Spa current temperature sensor class."""
+
+    def __init__(
+        self,
+        coordinator: IntexSpaDataUpdateCoordinator,
+        entry: ConfigEntry,
+        icon: str,
+        is_enabled_by_default: bool = True,
+    ):
+        super().__init__(coordinator, entry, icon, is_enabled_by_default)
+
+        name_or_default_name = self.entry.data.get("name", DEFAULT_NAME)
+        self._attr_device_class = DEVICE_CLASS_TEMPERATURE
+        self._attr_name = f"{name_or_default_name} Current Temperature"
+        self._attr_unique_id = f"{self.entry.entry_id}_current_temperature"
+
+    @property
+    def native_value(self):
+        """Return the native value of the sensor."""
+        return self.coordinator.data.current_temp
+
+    @property
+    def native_unit_of_measurement(self):
+        """Return the unit of measurement of this entity."""
+        return self.coordinator.data.unit
+
+
 class IntexSpaUidSensor(IntexSpaEntity, SensorEntity):
-    """Intex Spa generic switch class."""
+    """Intex Spa UID Sensor class."""
 
     _attr_entity_category = EntityCategory.DIAGNOSTIC
 
@@ -72,13 +110,13 @@ class IntexSpaUidSensor(IntexSpaEntity, SensorEntity):
         coordinator: IntexSpaDataUpdateCoordinator,
         entry: ConfigEntry,
         icon: str,
+        is_enabled_by_default: bool = True,
     ):
-        super().__init__(coordinator, entry, icon)
+        super().__init__(coordinator, entry, icon, is_enabled_by_default)
 
         name_or_default_name = self.entry.data.get("name", DEFAULT_NAME)
         self._attr_name = f"{name_or_default_name} UID"
         self._attr_unique_id = f"{self.entry.entry_id}_uid"
-        self._attr_entity_registry_enabled_default = False
 
         self._attr_native_value = self.coordinator.info.uid
 
@@ -89,7 +127,7 @@ class IntexSpaUidSensor(IntexSpaEntity, SensorEntity):
 
 
 class IntexSpaErrorSensor(IntexSpaEntity, SensorEntity):
-    """Intex Spa generic switch class."""
+    """Intex Spa Error Sensor class."""
 
     _attr_entity_category = EntityCategory.DIAGNOSTIC
 
@@ -100,15 +138,14 @@ class IntexSpaErrorSensor(IntexSpaEntity, SensorEntity):
         icon: str,
         name: str,
         entity: str,
-        is_enabled: bool = True,
+        is_enabled_by_default: bool = True,
     ):
-        super().__init__(coordinator, entry, icon)
+        super().__init__(coordinator, entry, icon, is_enabled_by_default)
 
         name_or_default_name = self.entry.data.get("name", DEFAULT_NAME)
+        self._attr_device_class = f"intex_spa__{entity}"
         self._attr_name = f"{name_or_default_name} {name}"
         self._attr_unique_id = f"{self.entry.entry_id}_{entity}"
-        self._attr_device_class = f"intex_spa__{entity}"
-        self._attr_entity_registry_enabled_default = is_enabled
 
     @property
     def native_value(self):
