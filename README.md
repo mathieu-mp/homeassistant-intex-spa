@@ -15,19 +15,19 @@ It connects to your spa via your local network, and does not rely on the cloud.
 
 This component will set up the following entities:
 
-Platform | Entity | Description
--- | -- | --
+Platform | Entity | Description | Entity status
+:-- | :-- | :-- | :--
 `climate` | Spa | Climate controller for water heating
-`switch` | Jets | Switch for toggling jets
-`switch` | Bubbles | Switch for toggling bubbles
 `switch` | Power | Switch for toggling power state
+`switch` | Bubbles | Switch for toggling bubbles
+`switch` | Jets | Switch for toggling jets | To disable if your spa does not feature jets
 `switch` | Filter | Switch for toggling water filtering
-`switch` | Sanitizer | Switch for toggling water electrolysis
-`sensor` | Current Temperature | Sensor for current temperature (similar to climate entity 'current_temp' attribute, disabled by default)
-`sensor` | UID | Unique ID of the spa (disabled by default)
+`switch` | Sanitizer | Switch for toggling water electrolysis | To disable if your spa does not feature a sanitizer
+`sensor` | Current Temperature | Sensor for current temperature (similar to climate entity 'current_temp' attribute) | Disabled by default
+`sensor` | UID | Unique ID of the spa | Disabled by default
 `sensor` | Error | Eventual error code and explanation
 `sensor` | Error description | Eventual action to take to solve the error
-`sensor` | Error code | Eventual uppercase error code (disabled by default)
+`sensor` | Error code | Eventual uppercase error code | Disabled by default
 
 ## Dashboard example
 
