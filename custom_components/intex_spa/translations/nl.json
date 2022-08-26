@@ -1,0 +1,21 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Apparaat is al geconfigureerd"
+        },
+        "error": {
+            "cannot_connect": "Verbinding maken mislukt",
+            "dns_not_known": "Kan DNS-naam niet omzetten",
+            "unknown": "Onverwachte fout"
+        },
+        "step": {
+            "user": {
+                "description": "Als je hulp nodig hebt bij de configuratie, kijk dan hier: https://github.com/mathieu-mp/homeassistant-intex-spa",
+                "data": {
+                    "name": "Apparaat naam",
+                    "host": "Host"
+                }
+            }
+        }
+    }
+}

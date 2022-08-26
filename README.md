@@ -62,6 +62,12 @@ Contributions are welcome :
 
 ...please read the [Contribution guidelines](CONTRIBUTING.md).
 
+## Versioning
+
+The versioning of this integration follows Semantic Versioning 2.0.0
+
+***Reminder**: Major version zero (0.y.z) is for initial development. Anything MAY change at any time. The public API SHOULD NOT be considered stable.*
+
 <!-- Links -->
 
 [license]: LICENSE

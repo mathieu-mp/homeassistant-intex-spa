@@ -7,7 +7,6 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.const import (
     ATTR_TEMPERATURE,
     TEMP_CELSIUS,
-    TEMP_FAHRENHEIT,
 )
 from homeassistant.components.climate.const import (
     HVAC_MODE_HEAT,
@@ -69,10 +68,7 @@ class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
     @property
     def temperature_unit(self):
         """Return the unit of measurement of this entity."""
-        if self.coordinator.data.unit == "°C":
-            return TEMP_CELSIUS
-        else:
-            return TEMP_FAHRENHEIT
+        return self.coordinator.data.unit
 
     @property
     def current_temperature(self):

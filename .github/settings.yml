@@ -75,8 +75,12 @@ labels:
   - name: "Documentation"
     color: "008672"
 
+  - name: "User Assistance"
+    color: "c8e193"
+
   - name: "Stale"
     color: "930191"
+
 # Milestones: define milestones for Issues and Pull Requests
 # milestones:
 #   - title: milestone-title
