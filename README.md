@@ -23,10 +23,11 @@ Platform | Entity | Description
 `switch` | Power | Switch for toggling power state
 `switch` | Filter | Switch for toggling water filtering
 `switch` | Sanitizer | Switch for toggling water electrolysis
+`sensor` | Current Temperature | Sensor for current temperature (similar to climate entity 'current_temp' attribute, disabled by default)
+`sensor` | UID | Unique ID of the spa (disabled by default)
 `sensor` | Error | Eventual error code and explanation
 `sensor` | Error description | Eventual action to take to solve the error
 `sensor` | Error code | Eventual uppercase error code (disabled by default)
-`sensor` | UID | Unique ID of the spa (disabled by default)
 
 ## Dashboard example
 
