@@ -61,25 +61,35 @@ repository:
 # Labels: define labels for Issues and Pull Requests
 labels:
   - name: "Feature Request"
-    color: "fbca04"
+    color: "00ffbb"
 
   - name: "Bug"
-    color: "b60205"
+    color: "e30000"
 
   - name: "Wont Fix"
     color: "ffffff"
 
   - name: "Enhancement"
-    color: "a2eeef"
+    color: "48ff00"
 
   - name: "Documentation"
-    color: "008672"
+    color: "0077ff"
 
   - name: "User Assistance"
-    color: "c8e193"
+    color: "0077ff"
 
   - name: "Stale"
-    color: "930191"
+    color: "ffffff"
+
+  - name: "Help needed"
+    color: "fbca04"
+
+  - name: "dependencies"
+    color: "000000"
+
+  - name: "github_actions"
+    color: "000000"
+
 
 # Milestones: define milestones for Issues and Pull Requests
 # milestones:
