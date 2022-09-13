@@ -3,6 +3,7 @@
 [![hacs][hacsbadge]][hacs]
 [![GitHub Release][releases-shield]][releases]
 ![Project Maintenance][maintenance-shield]
+[![Open in Remote - Containers][devcontainer-badge]][devcontainer]
 
 ## Disclaimers
 Intex brand is not involved in any way with this integration.
@@ -79,3 +80,5 @@ The versioning of this integration follows Semantic Versioning 2.0.0
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2022.svg
 [releases-shield]: https://img.shields.io/github/release/mathieu-mp/homeassistant-intex-spa.svg
 [releases]: https://github.com/mathieu-mp/homeassistant-intex-spa/releases
+[devcontainer]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/mathieu-mp/homeassistant-intex-spa
+[devcontainer-badge]: https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode
