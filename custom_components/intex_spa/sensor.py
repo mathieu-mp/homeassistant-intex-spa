@@ -151,9 +151,9 @@ class IntexSpaErrorSensor(IntexSpaEntity, SensorEntity):
     def native_value(self):
         """Return the native value of the sensor."""
         if not self.coordinator.data.error_code is False:
-            return self.coordinator.data.error_code
+            return self.coordinator.data.error_code.lower()
         else:
-            return "None"
+            return "none"
 
     # Redefine the super class IntexSpaEntity 'available' property
     @property

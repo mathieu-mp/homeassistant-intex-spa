@@ -1,28 +1,28 @@
 {
     "state": {
         "intex_spa__error": {
-            "None": "None",
-            "E81": "[E81] Echec du signal de transmission",
-            "E90": "[E90] L'eau ne s'écoule pas",
-            "E91": "[E91] Niveau de sel bas",
-            "E92": "[E92] Niveau de sel haut",
-            "E94": "[E94] Température de l'eau trop basse",
-            "E95": "[E95] Température de l'eau trop élevée",
-            "E96": "[E96] Erreur système",
-            "E97": "[E97] Protection anti-marche à sec",
-            "E99": "[E99] Capteur de température d'eau endommagé"
+            "none": "None",
+            "e81": "[E81] Echec du signal de transmission",
+            "e90": "[E90] L'eau ne s'écoule pas",
+            "e91": "[E91] Niveau de sel bas",
+            "e92": "[E92] Niveau de sel haut",
+            "e94": "[E94] Température de l'eau trop basse",
+            "e95": "[E95] Température de l'eau trop élevée",
+            "e96": "[E96] Erreur système",
+            "e97": "[E97] Protection anti-marche à sec",
+            "e99": "[E99] Capteur de température d'eau endommagé"
         },
         "intex_spa__error_description": {
-            "None": "None",
-            "E81": "[E81] Assurez-vous que le spa est alimenté et que le panneau de contrôle se trouve à moins de 5m du spa",
-            "E90": "[E90] Vérifiez que la cartouche filtrante et la buse de refoulement sont propres et non bouchées",
-            "E91": "[E91] Ajoutez du se et assurez-vous que le cordon de la cellule électrolytique est correctement branchée",
-            "E92": "[E92] Videz partiellement le spa et re-remplissez le avec de l'eau non salée",
-            "E94": "[E94] Ajoutez de l'eau chaude pour que la température remonte au dessus de 5°C",
-            "E95": "[E95] Eteignez le chauffage, vérifiez que la cartouche filtrante et la buse de refoulement sont propres et non bouchées",
-            "E96": "[E96] Eteignez et débranchez le spa. Vérifiez que la cartouche filtrante et la buse de refoulement sont propres et non bouchées, puis réalimentez le spa",
-            "E97": "[E97] Eteignez et débranchez le spa immédiatement. Contacter le centre de service Intex",
-            "E99": "[E99] Eteignez et débranchez le spa immédiatement. Contacter le centre de service Intex"
+            "none": "None",
+            "e81": "[E81] Assurez-vous que le spa est alimenté et que le panneau de contrôle se trouve à moins de 5m du spa",
+            "e90": "[E90] Vérifiez que la cartouche filtrante et la buse de refoulement sont propres et non bouchées",
+            "e91": "[E91] Ajoutez du se et assurez-vous que le cordon de la cellule électrolytique est correctement branchée",
+            "e92": "[E92] Videz partiellement le spa et re-remplissez le avec de l'eau non salée",
+            "e94": "[E94] Ajoutez de l'eau chaude pour que la température remonte au dessus de 5°C",
+            "e95": "[E95] Eteignez le chauffage, vérifiez que la cartouche filtrante et la buse de refoulement sont propres et non bouchées",
+            "e96": "[E96] Eteignez et débranchez le spa. Vérifiez que la cartouche filtrante et la buse de refoulement sont propres et non bouchées, puis réalimentez le spa",
+            "e97": "[E97] Eteignez et débranchez le spa immédiatement. Contacter le centre de service Intex",
+            "e99": "[E99] Eteignez et débranchez le spa immédiatement. Contacter le centre de service Intex"
         }
     }
 }
