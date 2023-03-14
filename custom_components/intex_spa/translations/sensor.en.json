@@ -1,28 +1,28 @@
 {
     "state": {
         "intex_spa__error": {
-            "None": "None",
-            "E81": "[E81] Transmission signal failure",
-            "E90": "[E90] Low or no water ﬂow",
-            "E91": "[E91] Low salt level or no salt",
-            "E92": "[E92] High salt level",
-            "E94": "[E94] Water temperature too low",
-            "E95": "[E95] Water temperature too high",
-            "E96": "[E96] Control base system error",
-            "E97": "[E97] Heater dry-ﬁre protection activated",
-            "E99": "[E99] Damaged water temperature sensor"
+            "none": "None",
+            "e81": "[E81] Transmission signal failure",
+            "e90": "[E90] Low or no water ﬂow",
+            "e91": "[E91] Low salt level or no salt",
+            "e92": "[E92] High salt level",
+            "e94": "[E94] Water temperature too low",
+            "e95": "[E95] Water temperature too high",
+            "e96": "[E96] Control base system error",
+            "e97": "[E97] Heater dry-ﬁre protection activated",
+            "e99": "[E99] Damaged water temperature sensor"
         },
         "intex_spa__error_description": {
-            "None": "None",
-            "E81": "[E81] Make sure the spa is powered on and the wireless control panel is within range of the control base (5m / 16ft)",
-            "E90": "[E90] Check the filter cartridge and ensure nothing is clogging the circulation system",
-            "E91": "[E91] Add more salt and make sure the electrolytic cell cord is firmly plugged in",
-            "E92": "[E92] Partially drain the spa and refill with fresh water",
-            "E94": "[E94] Add warm water to raise the spa temperature above 5°C / 41°F",
-            "E95": "[E95] Turn off the heater, check the filter cartridge and ensure nothing is clogging the circulation system",
-            "E96": "[E96] Turn off and unplug the spa. Check the ﬁlter cartridge and ensure nothing is clogging the circulation system, then restart the spa",
-            "E97": "[E97] Turn off and unplug the spa immediately. Contact Intex Service Center",
-            "E99": "[E99] Turn off and unplug the spa immediately. Contact Intex Service Center"
+            "none": "None",
+            "e81": "[E81] Make sure the spa is powered on and the wireless control panel is within range of the control base (5m / 16ft)",
+            "e90": "[E90] Check the filter cartridge and ensure nothing is clogging the circulation system",
+            "e91": "[E91] Add more salt and make sure the electrolytic cell cord is firmly plugged in",
+            "e92": "[E92] Partially drain the spa and refill with fresh water",
+            "e94": "[E94] Add warm water to raise the spa temperature above 5°C / 41°F",
+            "e95": "[E95] Turn off the heater, check the filter cartridge and ensure nothing is clogging the circulation system",
+            "e96": "[E96] Turn off and unplug the spa. Check the ﬁlter cartridge and ensure nothing is clogging the circulation system, then restart the spa",
+            "e97": "[E97] Turn off and unplug the spa immediately. Contact Intex Service Center",
+            "e99": "[E99] Turn off and unplug the spa immediately. Contact Intex Service Center"
         }
     }
 }
