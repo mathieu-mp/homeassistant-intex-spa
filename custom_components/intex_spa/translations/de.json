@@ -1,0 +1,21 @@
+{
+  "config": {
+	 "abort": {
+		"already_configured": "Gerät ist bereits konfiguriert"
+	 },
+	 "error": {
+		"cannot_connect": "Verbindungsfehler",
+		"dns_not_known": "Fehler beim Auflösen der DNS-Adresse",
+		"unknown": "Unerwarteter Fehler"
+	 },
+	 "step": {
+		"user": {
+		  "description": "Wenn sie Hilfe bei der Einrichtung benötigen schauen sie hier: https://github.com/mathieu-mp/homeassistant-intex-spa",
+		  "data": {
+			 "name": "Gerät Name",
+			 "host": "Gerät-Adresse (IP)"
+		  }
+		}
+	 }
+  }
+}
