@@ -1,0 +1,21 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Zariadenie je už nakonfigurované"
+        },
+        "error": {
+            "cannot_connect": "Nepodarilo sa pripojiť",
+            "dns_not_known": "Nepodarilo sa preložiť meno hostiteľa v DNS",
+            "unknown": "Neznáma chyba"
+        },
+        "step": {
+            "user": {
+                "description": "Pokiaľ potrebujete pomoc s konfiguráciou, navštívte: https://github.com/mathieu-mp/homeassistant-intex-spa",
+                "data": {
+                    "name": "Zariadenie",
+                    "host": "Hostiteľ"
+                }
+            }
+        }
+    }
+}
