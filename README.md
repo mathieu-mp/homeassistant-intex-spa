@@ -25,6 +25,7 @@ Platform | Entity | Description | Entity status
 `switch` | Filter | Switch for toggling water filtering
 `switch` | Sanitizer | Switch for toggling water electrolysis | To disable if your spa does not feature a sanitizer
 `sensor` | Current Temperature | Sensor for current temperature (similar to climate entity 'current_temp' attribute) | Disabled by default
+`sensor` | Target Temperature | Sensor for target temperature (similar to climate entity 'target_temp' attribute) | Disabled by default
 `sensor` | UID | Unique ID of the spa | Disabled by default
 `sensor` | Error | Eventual error code and explanation
 `sensor` | Error description | Eventual action to take to solve the error
