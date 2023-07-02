@@ -1,0 +1,41 @@
+name: Release actions
+
+on:
+  release:
+    types:
+      - "published"
+
+permissions: {}
+
+jobs:
+  release:
+    name: "Release"
+    runs-on: "ubuntu-latest"
+    permissions:
+      contents: write
+    steps:
+      - name: "Checkout the repository"
+        uses: "actions/checkout@v3.5.2"
+
+      - name: "Set release version number to manifest.json"
+        shell: "bash"
+        run: |
+          yq -i -o json '.version="${{ github.event.release.tag_name }}"' \
+            "${{ github.workspace }}/custom_components/intex_spa/manifest.json"
+
+      - name: "Set release version number to const.py"
+        shell: "bash"
+        run: |
+          sed -i 's/VERSION = "0.0.0"/VERSION = "${{ github.event.release.tag_name }}"/' \
+            "${{ github.workspace }}/custom_components/intex_spa/const.py"
+
+      - name: "ZIP the integration directory"
+        shell: "bash"
+        run: |
+          cd "${{ github.workspace }}/custom_components/intex_spa"
+          zip intex_spa.zip -r ./
+
+      - name: "Upload the ZIP file to the release"
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          files: ${{ github.workspace }}/custom_components/intex_spa/intex_spa.zip
