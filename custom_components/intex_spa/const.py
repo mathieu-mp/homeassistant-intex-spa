@@ -7,7 +7,7 @@ from homeassistant.const import Platform
 # Base component constants
 NAME = "Intex Spa"
 DOMAIN = "intex_spa"
-VERSION = "0.0.1"
+VERSION = "0.0.0"
 ISSUE_URL = "https://github.com/mathieu-mp/homeassistant-intex-spa/issues"
 
 # Platforms
