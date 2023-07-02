@@ -1,6 +1,8 @@
 {
     "name": "Intex Spa",
     "hacs": "1.6.0",
-    "homeassistant": "2022.4.0",
-    "render_readme": true
+    "homeassistant": "2022.8.0",
+    "render_readme": true,
+    "zip_release": true,
+    "filename": "intex_spa.zip"
 }
