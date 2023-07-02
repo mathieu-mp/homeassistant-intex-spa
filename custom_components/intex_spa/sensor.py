@@ -40,6 +40,12 @@ async def async_setup_entry(
                 icon="mdi:pool-thermometer",
                 is_enabled_by_default=False,
             ),
+            IntexSpaTargetTemperatureSensor(
+                coordinator,
+                entry,
+                icon="mdi:pool-thermometer",
+                is_enabled_by_default=False,
+            ),
             IntexSpaUidSensor(
                 coordinator,
                 entry,
@@ -93,6 +99,34 @@ class IntexSpaCurrentTemperatureSensor(IntexSpaEntity, SensorEntity):
     def native_value(self):
         """Return the native value of the sensor."""
         return self.coordinator.data.current_temp
+
+    @property
+    def native_unit_of_measurement(self):
+        """Return the unit of measurement of this entity."""
+        return self.coordinator.data.unit
+
+
+class IntexSpaTargetTemperatureSensor(IntexSpaEntity, SensorEntity):
+    """Intex Spa target temperature sensor class."""
+
+    def __init__(
+        self,
+        coordinator: IntexSpaDataUpdateCoordinator,
+        entry: ConfigEntry,
+        icon: str,
+        is_enabled_by_default: bool = True,
+    ):
+        super().__init__(coordinator, entry, icon, is_enabled_by_default)
+
+        name_or_default_name = self.entry.data.get("name", DEFAULT_NAME)
+        self._attr_device_class = DEVICE_CLASS_TEMPERATURE
+        self._attr_name = f"{name_or_default_name} Target Temperature"
+        self._attr_unique_id = f"{self.entry.entry_id}_target_temperature"
+
+    @property
+    def native_value(self):
+        """Return the native value of the sensor."""
+        return self.coordinator.data.preset_temp
 
     @property
     def native_unit_of_measurement(self):
