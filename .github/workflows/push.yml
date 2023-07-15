@@ -30,7 +30,7 @@ jobs:
     name: Check style formatting
     steps:
       - uses: "actions/checkout@v3.5.3"
-      - uses: "actions/setup-python@v4.6.1"
+      - uses: "actions/setup-python@v4.7.0"
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - run: python3 -m pip install black
@@ -43,7 +43,7 @@ jobs:
       - name: Check out code from GitHub
         uses: "actions/checkout@v3.5.3"
       - name: Setup Python
-        uses: "actions/setup-python@v4.6.1"
+        uses: "actions/setup-python@v4.7.0"
         with:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Install requirements
