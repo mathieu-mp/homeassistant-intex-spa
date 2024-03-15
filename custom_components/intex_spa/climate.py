@@ -1,4 +1,5 @@
 """Climate platform for Intex Spa integration."""
+
 from homeassistant.components.climate import ClimateEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
@@ -60,6 +61,7 @@ class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
         entry: ConfigEntry,
         icon: str,
     ):
+        """Initilize an IntexSpaClimate with an IntexSpaDataUpdateCoordinator and ConfigEntry."""
         super().__init__(coordinator, entry, icon)
 
         self._attr_name = self.entry.data.get("name", DEFAULT_NAME)
@@ -105,7 +107,7 @@ class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
 
     @property
     def hvac_mode(self):
-        """Return current operation ie. heat, off"""
+        """Return current operation ie. heat, off..."""
         if self.coordinator.data.heater:
             return HVAC_MODE_HEAT
 

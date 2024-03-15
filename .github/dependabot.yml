@@ -1,17 +1,15 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
-
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
 version: 2
 updates:
   - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "daily"
+    ignore:
+      # Dependabot should not update Home Assistant as that should match the homeassistant key in hacs.json
+      - dependency-name: "homeassistant"
 
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      # Check for updates to GitHub Actions every weekday
       interval: "daily"

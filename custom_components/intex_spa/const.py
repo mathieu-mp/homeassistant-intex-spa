@@ -1,4 +1,5 @@
 """Constants for Intex Spa integration."""
+
 from datetime import timedelta
 import voluptuous as vol
 

@@ -1,4 +1,5 @@
 """Switch platform for intex_spa."""
+
 from homeassistant.components.sensor import SensorEntity
 
 # from homeassistant.components. import SensorEntity
@@ -88,6 +89,7 @@ class IntexSpaCurrentTemperatureSensor(IntexSpaEntity, SensorEntity):
         icon: str,
         is_enabled_by_default: bool = True,
     ):
+        """Initialize an IntexSpaCurrentTemperatureSensor."""
         super().__init__(coordinator, entry, icon, is_enabled_by_default)
 
         name_or_default_name = self.entry.data.get("name", DEFAULT_NAME)
@@ -116,6 +118,7 @@ class IntexSpaTargetTemperatureSensor(IntexSpaEntity, SensorEntity):
         icon: str,
         is_enabled_by_default: bool = True,
     ):
+        """Initialize an IntexSpaTargetTemperatureSensor."""
         super().__init__(coordinator, entry, icon, is_enabled_by_default)
 
         name_or_default_name = self.entry.data.get("name", DEFAULT_NAME)
@@ -146,6 +149,7 @@ class IntexSpaUidSensor(IntexSpaEntity, SensorEntity):
         icon: str,
         is_enabled_by_default: bool = True,
     ):
+        """Initialize an IntexSpaUidSensor."""
         super().__init__(coordinator, entry, icon, is_enabled_by_default)
 
         name_or_default_name = self.entry.data.get("name", DEFAULT_NAME)
@@ -157,6 +161,7 @@ class IntexSpaUidSensor(IntexSpaEntity, SensorEntity):
     # Redefine the super class IntexSpaEntity 'available' property
     @property
     def available(self):
+        """Return the redefined availability state of the sensor."""
         return self.coordinator.last_update_success
 
 
@@ -174,6 +179,7 @@ class IntexSpaErrorSensor(IntexSpaEntity, SensorEntity):
         entity: str,
         is_enabled_by_default: bool = True,
     ):
+        """Initialize an IntexSpaErrorSensor."""
         super().__init__(coordinator, entry, icon, is_enabled_by_default)
 
         name_or_default_name = self.entry.data.get("name", DEFAULT_NAME)
@@ -184,7 +190,7 @@ class IntexSpaErrorSensor(IntexSpaEntity, SensorEntity):
     @property
     def native_value(self):
         """Return the native value of the sensor."""
-        if not self.coordinator.data.error_code is False:
+        if self.coordinator.data.error_code is not False:
             return self.coordinator.data.error_code.lower()
         else:
             return "none"
@@ -192,11 +198,13 @@ class IntexSpaErrorSensor(IntexSpaEntity, SensorEntity):
     # Redefine the super class IntexSpaEntity 'available' property
     @property
     def available(self):
+        """Return the redefined availability state of the sensor."""
         return self.coordinator.last_update_success
 
     @property
     def icon(self):
-        if not self.coordinator.data.error_code is False:
+        """Return the redefined icon of the sensor."""
+        if self.coordinator.data.error_code is not False:
             return "mdi:alert-circle-outline"
         else:
             return "mdi:alert-circle-check-outline"

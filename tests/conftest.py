@@ -1,4 +1,5 @@
 """Global fixtures for intex_spa integration."""
+
 # Fixtures allow you to replace functions with a Mock object. You can perform
 # many options via the Mock to reflect a particular behavior from the original
 # function that you want to see without going through the function's actual logic.
@@ -16,8 +17,8 @@
 # pytest includes fixtures OOB which you can use as defined on this page)
 from unittest.mock import patch
 
-from intex_spa.intex_spa_object_info import IntexSpaInfo
-from intex_spa.intex_spa_object_status import IntexSpaStatus
+from aio_intex_spa.intex_spa_object_info import IntexSpaInfo
+from aio_intex_spa.intex_spa_object_status import IntexSpaStatus
 
 import pytest
 
@@ -28,6 +29,7 @@ pytest_plugins = "pytest_homeassistant_custom_component"
 # Remove to enable selective use of this fixture
 @pytest.fixture(autouse=True)
 def auto_enable_custom_integrations(enable_custom_integrations):
+    """Enable loading custom integrations."""
     yield
 
 
