@@ -1,1 +1,2 @@
-intex-spa==0.8.4
+intex-spa==0.9.0
+aio-intex-spa==0.9.0
