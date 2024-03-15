@@ -7,12 +7,11 @@ from homeassistant.helpers.entity_platform import AddEntitiesCallback
 
 from homeassistant.const import (
     ATTR_TEMPERATURE,
-    TEMP_CELSIUS,
+    UnitOfTemperature,
 )
 from homeassistant.components.climate.const import (
-    HVAC_MODE_HEAT,
-    HVAC_MODE_OFF,
-    SUPPORT_TARGET_TEMPERATURE,
+    HVACMode,
+    ClimateEntityFeature,
 )
 
 from .entity import IntexSpaEntity
@@ -49,10 +48,10 @@ class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
     """Intex Spa climate class."""
 
     _attr_hvac_modes = [
-        HVAC_MODE_HEAT,
-        HVAC_MODE_OFF,
+        HVACMode.HEAT,
+        HVACMode.OFF,
     ]
-    _attr_supported_features = SUPPORT_TARGET_TEMPERATURE
+    _attr_supported_features = ClimateEntityFeature.TARGET_TEMPERATURE
     _attr_target_temperature_step = 1
 
     def __init__(
@@ -80,7 +79,7 @@ class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
     @property
     def min_temp(self):
         """Return the minimum temperature."""
-        if self.temperature_unit == TEMP_CELSIUS:
+        if self.temperature_unit == UnitOfTemperature.CELSIUS:
             return 20
         else:
             return 50
@@ -88,7 +87,7 @@ class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
     @property
     def max_temp(self):
         """Return the maximum temperature.."""
-        if self.temperature_unit == TEMP_CELSIUS:
+        if self.temperature_unit == UnitOfTemperature.CELSIUS:
             return 40
         else:
             return 104
@@ -109,18 +108,18 @@ class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
     def hvac_mode(self):
         """Return current operation ie. heat, off..."""
         if self.coordinator.data.heater:
-            return HVAC_MODE_HEAT
+            return HVACMode.HEAT
 
-        return HVAC_MODE_OFF
+        return HVACMode.OFF
 
     async def async_set_hvac_mode(self, hvac_mode):
         """Set HVAC mode."""
-        if hvac_mode == HVAC_MODE_OFF:
+        if hvac_mode == HVACMode.OFF:
             status = await self.coordinator.api.async_set_heater(False)
             self.coordinator.async_set_updated_data(status)
             return
 
-        if hvac_mode == HVAC_MODE_HEAT:
+        if hvac_mode == HVACMode.HEAT:
             status = await self.coordinator.api.async_set_heater(True)
             self.coordinator.async_set_updated_data(status)
             return
