@@ -54,7 +54,7 @@ def bypass_get_info_fixture():
         {"ip": "192.168.0.10", "uid": "0K040210392021030300010000", "dtype": "spa"}
     )
     with patch(
-        "intex_spa.IntexSpa.async_update_info",
+        "aio_intex_spa.IntexSpa.async_update_info",
         return_value=info,
     ):
         yield
@@ -67,7 +67,7 @@ def bypass_update_data_fixture():
     """Skip calls to get data from API."""
     status = IntexSpaStatus(int("0xFFFF110F0107001F0000000080808021000016", 16))
     with patch(
-        "intex_spa.IntexSpa.async_update_status",
+        "aio_intex_spa.IntexSpa.async_update_status",
         return_value=status,
     ):
         yield
@@ -79,7 +79,7 @@ def bypass_update_data_fixture():
 def error_update_info_fixture():
     """Simulate error when retrieving data from API."""
     with patch(
-        "intex_spa.IntexSpa.async_update_info",
+        "aio_intex_spa.IntexSpa.async_update_info",
         side_effect=Exception,
     ):
         yield
@@ -91,7 +91,7 @@ def error_update_info_fixture():
 def error_update_data_fixture():
     """Simulate error when retrieving data from API."""
     with patch(
-        "intex_spa.IntexSpa.async_update_status",
+        "aio_intex_spa.IntexSpa.async_update_status",
         side_effect=Exception,
     ):
         yield
