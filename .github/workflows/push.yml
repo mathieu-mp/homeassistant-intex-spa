@@ -7,7 +7,7 @@ on:
       - dev
 
 env:
-  PYTHON_VERSION: "3.10"
+  PYTHON_VERSION: "3.12"
 
 jobs:
   validate:
@@ -49,7 +49,6 @@ jobs:
       - name: Install requirements
         run: |
           python3 -m pip install -r requirements.txt
-          python3 -m pip install -r requirements_test.txt
       - name: Run tests
         run: |
           pytest \

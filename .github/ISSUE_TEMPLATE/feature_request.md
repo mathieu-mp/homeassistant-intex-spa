@@ -1,20 +1,47 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
+name: "Feature request"
+description: "Suggest an idea for this project"
+labels: "Feature+Request"
+body:
+- type: markdown
+  attributes:
+    value: Before you open a new feature request, search through the existing feature requests to see if others have had the same idea.
+- type: checkboxes
+  attributes:
+    label: Checklist
+    options:
+      - label: I have filled out the template to the best of my ability.
+        required: true
+      - label: This only contains 1 feature request (if you have multiple feature requests, open one feature request for each feature request).
+        required: true
+      - label: This issue is not a duplicate feature request of [previous feature requests](https://github.com/ludeeus/integration_blueprint/issues?q=is%3Aissue+label%3A%22Feature+Request%22+).
+        required: true
 
----
+- type: textarea
+  attributes:
+    label: "Is your feature request related to a problem? Please describe."
+    description: "A clear and concise description of what the problem is."
+    placeholder: "I'm always frustrated when [...]"
+  validations:
+    required: true
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+- type: textarea
+  attributes:
+    label: "Describe the solution you'd like"
+    description: "A clear and concise description of what you want to happen."
+  validations:
+    required: true
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+- type: textarea
+  attributes:
+    label: "Describe alternatives you've considered"
+    description: "A clear and concise description of any alternative solutions or features you've considered."
+  validations:
+    required: true
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
-
-**Additional context**
-Add any other context or screenshots about the feature request here.
+- type: textarea
+  attributes:
+    label: "Additional context"
+    description: "Add any other context or screenshots about the feature request here."
+  validations:
+    required: true

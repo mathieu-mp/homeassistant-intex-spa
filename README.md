@@ -81,7 +81,7 @@ The versioning of this integration follows Semantic Versioning 2.0.0
 [hacs]: https://hacs.xyz/
 [hacsbadge]: https://img.shields.io/badge/HACS-Default-41BDF5.svg
 [screenshot_img]: https://raw.githubusercontent.com/mathieu-mp/homeassistant-intex-spa/main/screenshot_fr.png
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2023.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
 [releases-shield]: https://img.shields.io/github/release/mathieu-mp/homeassistant-intex-spa.svg
 [releases]: https://github.com/mathieu-mp/homeassistant-intex-spa/releases
 [devcontainer]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/mathieu-mp/homeassistant-intex-spa

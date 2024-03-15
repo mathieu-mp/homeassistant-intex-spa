@@ -1,21 +1,19 @@
-"""
-Custom integration to integrate Intex Spa with Home Assistant.
+"""Custom integration to integrate Intex Spa with Home Assistant.
 
 For more details about this integration, please refer to
 https://github.com/mathieu-mp/homeassistant-intex-spa
 """
-import asyncio
-from cmath import e
 
-# from datetime import timedelta
+from __future__ import annotations
+
+
 import logging
 
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import Config, HomeAssistant
-from homeassistant.exceptions import ConfigEntryNotReady
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
-from intex_spa import IntexSpa, IntexSpaUnreachableException, IntexSpaDnsException
+from aio_intex_spa import IntexSpa, IntexSpaUnreachableException, IntexSpaDnsException
 from .const import (
     DOMAIN,
     PLATFORMS,
@@ -64,7 +62,7 @@ class IntexSpaDataUpdateCoordinator(DataUpdateCoordinator):
         super().__init__(hass, _LOGGER, name=DOMAIN, update_interval=SCAN_INTERVAL)
 
     async def _async_update_data(self):
-        """Update data via intex-spa python library"""
+        """Update data via intex-spa python library."""
         try:
             return await self.api.async_update_status()
         except (IntexSpaUnreachableException, IntexSpaDnsException) as exception:
@@ -73,7 +71,7 @@ class IntexSpaDataUpdateCoordinator(DataUpdateCoordinator):
             raise NotImplementedError from exception
 
     async def async_update_info(self):
-        """Update info via intex-spa python library"""
+        """Update info via intex-spa python library."""
         try:
             self.info = await self.api.async_update_info()
         except (IntexSpaUnreachableException, IntexSpaDnsException) as exception:

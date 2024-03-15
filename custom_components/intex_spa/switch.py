@@ -1,4 +1,5 @@
 """Switch platform for intex_spa."""
+
 from homeassistant.components.switch import SwitchEntity
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
@@ -71,6 +72,7 @@ class IntexSpaSwitch(IntexSpaEntity, SwitchEntity):
         icon: str,
         switch: str,
     ):
+        """Initialize an IntexSpaSwitch."""
         super().__init__(coordinator, entry, icon)
         self._switch_type = switch.lower()
 
