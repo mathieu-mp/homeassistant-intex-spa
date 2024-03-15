@@ -1,16 +1,10 @@
 """Switch platform for intex_spa."""
 
-from homeassistant.components.sensor import SensorEntity
-
-# from homeassistant.components. import SensorEntity
+from homeassistant.components.sensor import SensorEntity, SensorDeviceClass
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.entity import EntityCategory
-
-from homeassistant.const import (
-    DEVICE_CLASS_TEMPERATURE,
-)
 
 from .entity import IntexSpaEntity
 from . import IntexSpaDataUpdateCoordinator
@@ -93,7 +87,7 @@ class IntexSpaCurrentTemperatureSensor(IntexSpaEntity, SensorEntity):
         super().__init__(coordinator, entry, icon, is_enabled_by_default)
 
         name_or_default_name = self.entry.data.get("name", DEFAULT_NAME)
-        self._attr_device_class = DEVICE_CLASS_TEMPERATURE
+        self._attr_device_class = SensorDeviceClass.TEMPERATURE
         self._attr_name = f"{name_or_default_name} Current Temperature"
         self._attr_unique_id = f"{self.entry.entry_id}_current_temperature"
 
@@ -122,7 +116,7 @@ class IntexSpaTargetTemperatureSensor(IntexSpaEntity, SensorEntity):
         super().__init__(coordinator, entry, icon, is_enabled_by_default)
 
         name_or_default_name = self.entry.data.get("name", DEFAULT_NAME)
-        self._attr_device_class = DEVICE_CLASS_TEMPERATURE
+        self._attr_device_class = SensorDeviceClass.TEMPERATURE
         self._attr_name = f"{name_or_default_name} Target Temperature"
         self._attr_unique_id = f"{self.entry.entry_id}_target_temperature"
 
