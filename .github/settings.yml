@@ -66,30 +66,44 @@ labels:
   - name: "Bug"
     color: "e30000"
 
-  - name: "Wont Fix"
-    color: "ffffff"
+  - name: "Obsolescence"
+    color: "000000"
 
   - name: "Enhancement"
-    color: "48ff00"
+    color: "00ffbb"
 
   - name: "Documentation"
+    description: "To update Documentation"
     color: "0077ff"
 
   - name: "User Assistance"
     color: "0077ff"
 
   - name: "Stale"
-    color: "ffffff"
+    color: "aaaaaa"
+
+  - name: "Won't Fix"
+    color: "aaaaaa"
 
   - name: "Help needed"
+    description: "Contribution needed"
     color: "fbca04"
 
-  - name: "dependencies"
-    color: "000000"
+  - name: "Dependencies"
+    description: "To update Dependencies"
+    color: "0052cc"
 
-  - name: "github_actions"
-    color: "000000"
+  - name: "GitHub Actions"
+    description: "To update GitHub Actions code"
+    color: "0052cc"
 
+  - name: "Python"
+    description: "To update Python code"
+    color: "0052cc"
+
+  - name: "DevContainer"
+    description: "To update DevContainer code"
+    color: "0052cc"
 
 # Milestones: define milestones for Issues and Pull Requests
 # milestones:
