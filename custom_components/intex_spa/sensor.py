@@ -180,6 +180,7 @@ class IntexSpaErrorSensor(IntexSpaEntity, SensorEntity):
         self._attr_device_class = f"intex_spa__{entity}"
         self._attr_name = f"{name_or_default_name} {name}"
         self._attr_unique_id = f"{self.entry.entry_id}_{entity}"
+        self._attr_translation_key = entity
 
     @property
     def native_value(self):

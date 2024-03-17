@@ -1,21 +1,53 @@
 {
-  "config": {
-	 "abort": {
-		"already_configured": "Gerät ist bereits konfiguriert"
-	 },
-	 "error": {
-		"cannot_connect": "Verbindungsfehler",
-		"dns_not_known": "Fehler beim Auflösen der DNS-Adresse",
-		"unknown": "Unerwarteter Fehler"
-	 },
-	 "step": {
-		"user": {
-		  "description": "Wenn sie Hilfe bei der Einrichtung benötigen schauen sie hier: https://github.com/mathieu-mp/homeassistant-intex-spa",
-		  "data": {
-			 "name": "Gerät Name",
-			 "host": "Gerät Netzwerk-Adresse"
-		  }
-		}
-	 }
-  }
+    "config": {
+        "abort": {
+            "already_configured": "Gerät ist bereits konfiguriert"
+        },
+        "error": {
+            "cannot_connect": "Verbindungsfehler",
+            "dns_not_known": "Fehler beim Auflösen der DNS-Adresse",
+            "unknown": "Unerwarteter Fehler"
+        },
+        "step": {
+            "user": {
+                "description": "Wenn sie Hilfe bei der Einrichtung benötigen schauen sie hier: https://github.com/mathieu-mp/homeassistant-intex-spa",
+                "data": {
+                    "name": "Gerät Name",
+                    "host": "Gerät Netzwerk-Adresse"
+                }
+            }
+        }
+    },
+    "entity": {
+        "sensor": {
+            "error": {
+                "state": {
+                    "none": "Kein Fehler",
+                    "e81": "[E81] Verbindungsfehler",
+                    "e90": "[E90] Niedrige Durchflussrate",
+                    "e91": "[E91] Niedriger Salzgehalt",
+                    "e92": "[E92] Hoher Salzgehalt",
+                    "e94": "[E94] Wassertemperatur zu kalt",
+                    "e95": "[E95] Wassertemperatur zu heiß",
+                    "e96": "[E96] Kontrollstation Systemfehler",
+                    "e97": "[E97] Heizung Trockenbrandschutz",
+                    "e99": "[E99] Defekter Wassertemperatursensor"
+                }
+            },
+            "error_description": {
+                "state": {
+                    "none": "Kein Fehler",
+                    "e81": "[E81] Stellen sie sicher, dass der Spa Strom erhält und das Kabellose Kontroll-Panel in Reichweite (5m) der Basis-Einheit ist",
+                    "e90": "[E90] Überprüfen sie den Filter und stellen sie sicher, dass die Ein-/Auslässe nicht blockiert sind",
+                    "e91": "[E91] Fügen sie mehr Salz hinzu und stellen sie sicher, dass das Kabel der Elektrolyse-einheit sicher eingesteckt ist",
+                    "e92": "[E92] Entnehmen sie einen Teil des Wassers und füllen sie unbehandeltes Wasser nach",
+                    "e94": "[E94] Fügen sie warmes Wasser hinzu, um die Temperatur auf über 5°C zu erhöhen",
+                    "e95": "[E95] Deaktivieren sie die Heizung, prüfen sie, ob nichts den Filter oder Wasser-Kreislauf blockiert",
+                    "e96": "[E96] Schalten sie den Spa aus und prüfen sie, ob nichts den Filter oder Wasser-Kreislauf blockiert",
+                    "e97": "[E97] Schalten Sie den Spa sofort aus und ziehen Sie den Netzstecker. Kontaktieren sie das Intex Service Center",
+                    "e99": "[E99] Schalten Sie den Spa sofort aus und ziehen Sie den Netzstecker. Kontaktieren sie das Intex Service Center"
+                }
+            }
+        }
+    }
 }
