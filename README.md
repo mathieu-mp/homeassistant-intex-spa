@@ -12,7 +12,7 @@ Please read the [license] file before use, and the manufacturer documentation.
 
 ## What it does
 This component relies on [Intex Spa Python package][intex_spa_package].\
-It requires the spa to be connected to your local network wifi[^0].\
+It requires the spa to be paired with your wifi[^0].\
 It connects to your spa via your local network, and does not rely on the cloud.
 
 This component will set up the following entities:
