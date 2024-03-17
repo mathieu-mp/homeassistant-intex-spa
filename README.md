@@ -32,7 +32,7 @@ Platform | Entity | Description | Entity status
 `sensor` | Error description | Eventual action to take to solve the error
 `sensor` | Error code | Eventual uppercase error code | Disabled by default[^1]
 
-[^0]: Use the official Intex App to pair your Spa with your wifi network, or [try ESPTouch as suggested by @FreezyExp](#51)
+[^0]: Use the official Intex App to pair your Spa with your wifi network, or [try ESPTouch as suggested by @FreezyExp][esptouch_issue]
 [^1]: Some sensors are disabled by default because they are not needed by most of the users.
   There is no risk or side effect in enabling them if necessary.
 
@@ -88,3 +88,4 @@ The versioning of this integration follows Semantic Versioning 2.0.0
 [releases]: https://github.com/mathieu-mp/homeassistant-intex-spa/releases
 [devcontainer]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/mathieu-mp/homeassistant-intex-spa
 [devcontainer-badge]: https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode
+[esptouch_issue]: https://github.com/mathieu-mp/homeassistant-intex-spa/issues/51
