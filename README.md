@@ -32,7 +32,7 @@ Platform | Entity | Description | Entity status
 `sensor` | Error description | Eventual action to take to solve the error
 `sensor` | Error code | Eventual uppercase error code | Disabled by default[^1]
 
-[^0]: Use the official Intex App to pair your Spa with your wifi network, or [try ESPTouch as suggested by @FreezyExp](mathieu-mp/homeassistant-intex-spa#51)
+[^0]: Use the official Intex App to pair your Spa with your wifi network, or [try ESPTouch as suggested by @FreezyExp](#51)
 [^1]: Some sensors are disabled by default because they are not needed by most of the users.
   There is no risk or side effect in enabling them if necessary.
 
