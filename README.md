@@ -12,6 +12,7 @@ Please read the [license] file before use, and the manufacturer documentation.
 
 ## What it does
 This component relies on [Intex Spa Python package][intex_spa_package].\
+It requires the spa to be connected to your local network wifi[^0].\
 It connects to your spa via your local network, and does not rely on the cloud.
 
 This component will set up the following entities:
@@ -31,6 +32,7 @@ Platform | Entity | Description | Entity status
 `sensor` | Error description | Eventual action to take to solve the error
 `sensor` | Error code | Eventual uppercase error code | Disabled by default[^1]
 
+[^0]: Use the official Intex App to pair your Spa with your wifi network, or [try ESPTouch as suggested by @FreezyExp](mathieu-mp/homeassistant-intex-spa#51)
 [^1]: Some sensors are disabled by default because they are not needed by most of the users.
   There is no risk or side effect in enabling them if necessary.
 
