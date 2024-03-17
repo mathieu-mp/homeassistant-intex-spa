@@ -17,5 +17,33 @@
                 }
             }
         }
+    },
+    "entity": {
+        "sensor": {
+            "error": {
+                "none": "Žiadna chyba",
+                "e81": "[E81] Chyba vysielacieho signálu",
+                "e90": "[E90] Žiadny prietok vody",
+                "e91": "[E91] Poplachový kód (Nízka hladina soli)",
+                "e92": "[E92] Poplachový kód (Vysoká hladina soli)",
+                "e94": "[E94] Príliš nízka teplota vody",
+                "e95": "[E95] Príliš vysoká teplota vody",
+                "e96": "[E96] Systémová chyba",
+                "e97": "[E97] Ochrana pred požiarom",
+                "e99": "[E99] Poškodený senzor teploty vody"
+            },
+            "error_description": {
+                "none": "Žiadny popis",
+                "e81": "[E81] Uistite sa, že je vírivka zapnutá a bezdrôtový ovládací panel je v dosahu ovládacej základne (5m)",
+                "e90": "[E90] Skontrolujte filtračnú kartušu a uistite sa, že nič neupcháva cirkulačný systém",
+                "e91": "[E91] Pridajte soľ a uistite sa, že kábel elektrolyzéra je pevne pripojený do zásuvky krytu elektrolyzéra",
+                "e92": "[E92] Čiastočne vypustite bazén a naplnte ho čerstvou vodou",
+                "e94": "[E94] Pridajte trochu teplej vody, aby ste zvýšili teplotu vody vio vírivke nad 5°C",
+                "e95": "[E95] Vypnite vytápanie, zkontrolujte filtračnú kartušu a uistite sa, že nič neupcháva cirkulačný systém",
+                "e96": "[E96] Ovládaciu jednotku vypnite a odpojte. Zasunte RCD a prevedte celkový restart vírivky",
+                "e97": "[E97] Okamžite vírivku vypnite a odpojte od siete. Kontaktujte zákaznicky servis Intex",
+                "e99": "[E99] Okamžite vírivku vypnite a odpojte od siete. Kontaktujte zákaznicky servis Intex"
+            }
+        }
     }
 }
