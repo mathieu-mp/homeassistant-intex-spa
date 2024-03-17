@@ -21,29 +21,31 @@
     "entity": {
         "sensor": {
             "error": {
-                "none": "Geen",
-                "e81": "[E81] Transmissie signaal fout",
-                "e90": "[E90] Laag of geen waterstroom",
-                "e91": "[E91] Laag of geen zout niveau",
-                "e92": "[E92] Hoog zout niveau",
-                "e94": "[E94] Water temperatuur te laag",
-                "e95": "[E95] Water temperatuur te hoog",
-                "e96": "[E96] Systeemfout bedienpaneel",
-                "e97": "[E97] Droogloop beveiliging actief",
-                "e99": "[E99] Water temperatuursensor kapot"
-            },
-            "error_description": {
-                "none": "None",
-                "e81": "[E81] Zorg ervoor dat de spa is ingeschakeld en dat het draadloze bedieningspaneel zich binnen het bereik van de bedieningsbasis bevindt (5m / 16ft)",
-                "e90": "[E90] Controleer het filterpatroon en zorg ervoor dat niets het circulatiesysteem verstopt",
-                "e91": "[E91] Voeg meer zout toe en zorg ervoor dat het snoer van de elektrolytische cel goed is aangesloten",
-                "e92": "[E92] Laat de spa gedeeltelijk leeglopen en vul deze opnieuw met vers water",
-                "e94": "[E94] Voeg warm water toe om de spa-temperatuur te verhogen 5°C / 41°F",
-                "e95": "[E95] Zet de verwarming uit, controleer het filterpatroon en zorg ervoor dat niets het circulatiesysteem verstopt",
-                "e96": "[E96] Zet de spa uit en haal de stekker uit het stopcontact. Controleer het ﬁlterpatroon en zorg ervoor dat niets het circulatiesysteem verstopt, start de spa vervolgens opnieuw",
-                "e97": "[E97] Schakel de spa onmiddellijk uit en haal de stekker uit het stopcontact. Neem contact op met het Intex-servicecentrum",
-                "e99": "[E99] Schakel de spa onmiddellijk uit en haal de stekker uit het stopcontact. Neem contact op met het Intex-servicecentrum"
+                "state": {
+                    "none": "Geen",
+                    "e81": "[E81] Transmissie signaal fout",
+                    "e90": "[E90] Laag of geen waterstroom",
+                    "e91": "[E91] Laag of geen zout niveau",
+                    "e92": "[E92] Hoog zout niveau",
+                    "e94": "[E94] Water temperatuur te laag",
+                    "e95": "[E95] Water temperatuur te hoog",
+                    "e96": "[E96] Systeemfout bedienpaneel",
+                    "e97": "[E97] Droogloop beveiliging actief",
+                    "e99": "[E99] Water temperatuursensor kapot"
+                },
+                "error_description": {
+                    "state": {
+                        "none": "None",
+                        "e81": "[E81] Zorg ervoor dat de spa is ingeschakeld en dat het draadloze bedieningspaneel zich binnen het bereik van de bedieningsbasis bevindt (5m / 16ft)",
+                        "e90": "[E90] Controleer het filterpatroon en zorg ervoor dat niets het circulatiesysteem verstopt",
+                        "e91": "[E91] Voeg meer zout toe en zorg ervoor dat het snoer van de elektrolytische cel goed is aangesloten",
+                        "e92": "[E92] Laat de spa gedeeltelijk leeglopen en vul deze opnieuw met vers water",
+                        "e94": "[E94] Voeg warm water toe om de spa-temperatuur te verhogen 5°C / 41°F",
+                        "e95": "[E95] Zet de verwarming uit, controleer het filterpatroon en zorg ervoor dat niets het circulatiesysteem verstopt",
+                        "e96": "[E96] Zet de spa uit en haal de stekker uit het stopcontact. Controleer het ﬁlterpatroon en zorg ervoor dat niets het circulatiesysteem verstopt, start de spa vervolgens opnieuw",
+                        "e97": "[E97] Schakel de spa onmiddellijk uit en haal de stekker uit het stopcontact. Neem contact op met het Intex-servicecentrum",
+                        "e99": "[E99] Schakel de spa onmiddellijk uit en haal de stekker uit het stopcontact. Neem contact op met het Intex-servicecentrum"
+                    }
+                }
             }
         }
-    }
-}

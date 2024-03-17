@@ -21,28 +21,32 @@
     "entity": {
         "sensor": {
             "error": {
-                "none": "None",
-                "e81": "[E81] Chyba vysílacího signálu",
-                "e90": "[E90] Žádný průtok vody",
-                "e91": "[E91] Poplachový kód (Nízká hladina soli)",
-                "e92": "[E92] Poplachový kód (Vysoká hladina soli)",
-                "e94": "[E94] Příliš nízká teplota vody",
-                "e95": "[E95] Příliš vysoká teplota vody",
-                "e96": "[E96] Systémová chyba",
-                "e97": "[E97] Ochrana před požárem",
-                "e99": "[E99] Rozbitý senzor teploty vody"
+                "state": {
+                    "none": "None",
+                    "e81": "[E81] Chyba vysílacího signálu",
+                    "e90": "[E90] Žádný průtok vody",
+                    "e91": "[E91] Poplachový kód (Nízká hladina soli)",
+                    "e92": "[E92] Poplachový kód (Vysoká hladina soli)",
+                    "e94": "[E94] Příliš nízká teplota vody",
+                    "e95": "[E95] Příliš vysoká teplota vody",
+                    "e96": "[E96] Systémová chyba",
+                    "e97": "[E97] Ochrana před požárem",
+                    "e99": "[E99] Rozbitý senzor teploty vody"
+                }
             },
             "error_description": {
-                "none": "None",
-                "e81": "[E81] Ujistěte se, že je lázeň zapnutá a bezdrátový ovládací panel je v dosahu ovládací základny (5m / 16ft)",
-                "e90": "[E90] Zkontrolujte filtrační kartuš a ujistěte se, že nic neucpává cirkulační systém",
-                "e91": "[E91] Přidejte sůl a ujistěte se, že kabel elektrolyzéru je pevně připojen do zásuvky krytu elektrolyzéru",
-                "e92": "[E92] Částečně vypusťte bazén a naplňte ho čerstvou vodou",
-                "e94": "[E94] Přidejte trochu teplé vody, abyste zvýšili teplotu vody v lázni nad 5°C / 41°F",
-                "e95": "[E95] Vypněte vytápění, zkontrolujte filtrační kartuš a ujistěte se, že nic neucpává cirkulační systém",
-                "e96": "[E96] Ovládací jednotku vypněte a odpojte. Zasuňte RCD a proveďte celkový restart",
-                "e97": "[E97] Okamžitě lázeň vypněte a odpojte od sítě. Kontaktujte zákaznický servis Intex",
-                "e99": "[E99] Okamžitě lázeň vypněte a odpojte od sítě. Kontaktujte zákaznický servis Intex"
+                "state": {
+                    "none": "None",
+                    "e81": "[E81] Ujistěte se, že je lázeň zapnutá a bezdrátový ovládací panel je v dosahu ovládací základny (5m / 16ft)",
+                    "e90": "[E90] Zkontrolujte filtrační kartuš a ujistěte se, že nic neucpává cirkulační systém",
+                    "e91": "[E91] Přidejte sůl a ujistěte se, že kabel elektrolyzéru je pevně připojen do zásuvky krytu elektrolyzéru",
+                    "e92": "[E92] Částečně vypusťte bazén a naplňte ho čerstvou vodou",
+                    "e94": "[E94] Přidejte trochu teplé vody, abyste zvýšili teplotu vody v lázni nad 5°C / 41°F",
+                    "e95": "[E95] Vypněte vytápění, zkontrolujte filtrační kartuš a ujistěte se, že nic neucpává cirkulační systém",
+                    "e96": "[E96] Ovládací jednotku vypněte a odpojte. Zasuňte RCD a proveďte celkový restart",
+                    "e97": "[E97] Okamžitě lázeň vypněte a odpojte od sítě. Kontaktujte zákaznický servis Intex",
+                    "e99": "[E99] Okamžitě lázeň vypněte a odpojte od sítě. Kontaktujte zákaznický servis Intex"
+                }
             }
         }
     }
