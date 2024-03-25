@@ -13,7 +13,9 @@
                 "description": "If you need help with the configuration have a look here: https://github.com/mathieu-mp/homeassistant-intex-spa",
                 "data": {
                     "name": "Device name",
-                    "host": "Host"
+                    "host": "Hostname or IP",
+                    "has_jets": "Features massage jets",
+                    "has_sanitizer": "Features a salt sanitizer"
                 }
             }
         }
