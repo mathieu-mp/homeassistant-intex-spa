@@ -15,7 +15,7 @@ jobs:
       contents: write
     steps:
       - name: "Checkout the repository"
-        uses: "actions/checkout@v4.1.2"
+        uses: "actions/checkout@v4"
 
       - name: "Set release version number to manifest.json"
         shell: "bash"
@@ -36,6 +36,6 @@ jobs:
           zip intex_spa.zip -r ./
 
       - name: "Upload the ZIP file to the release"
-        uses: softprops/action-gh-release@v2.0.4
+        uses: softprops/action-gh-release@v2
         with:
           files: ${{ github.workspace }}/custom_components/intex_spa/intex_spa.zip
