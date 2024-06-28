@@ -31,15 +31,15 @@ async def test_setup_unload_and_reload_entry(
     # and IntexSpa.async_update_info calls, no code from IntexSpa actually runs.
     assert await async_setup_entry(hass, config_entry)
     assert DOMAIN in hass.data and config_entry.entry_id in hass.data[DOMAIN]
-    assert (
-        type(hass.data[DOMAIN][config_entry.entry_id]) == IntexSpaDataUpdateCoordinator
+    assert isinstance(
+        hass.data[DOMAIN][config_entry.entry_id], IntexSpaDataUpdateCoordinator
     )
 
     # Reload the entry and assert that the data from above is still there
     assert await async_reload_entry(hass, config_entry) is None
     assert DOMAIN in hass.data and config_entry.entry_id in hass.data[DOMAIN]
-    assert (
-        type(hass.data[DOMAIN][config_entry.entry_id]) == IntexSpaDataUpdateCoordinator
+    assert isinstance(
+        hass.data[DOMAIN][config_entry.entry_id], IntexSpaDataUpdateCoordinator
     )
 
     # Unload the entry and verify that the data has been removed
