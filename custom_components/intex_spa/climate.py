@@ -135,3 +135,4 @@ class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
     async def async_turn_on(self) -> None:
         """Turn climate on."""
         await self.async_set_hvac_mode(HVACMode.HEAT)
+        
