@@ -7,17 +7,6 @@ body:
   attributes:
     value: Before you open a new feature request, search through the existing feature requests to see if others have had the same idea.
 
-- type: checkboxes
-  attributes:
-    label: Checklist
-    options:
-      - label: I have filled out the template to the best of my ability.
-        required: true
-      - label: This only contains 1 feature request (if you have multiple feature requests, open one feature request for each feature request).
-        required: true
-      - label: This issue is not a duplicate feature request of [previous feature requests](https://github.com/mathieu-mp/homeassistant-intex-spa/issues?q=is%3Aissue).
-        required: true
-
 - type: textarea
   attributes:
     label: "Is your feature request related to a problem? Please describe."
@@ -46,3 +35,14 @@ body:
     description: "Add any other context or screenshots about the feature request here."
   validations:
     required: false
+
+- type: checkboxes
+  attributes:
+    label: Checklist
+    options:
+      - label: I have filled out the template to the best of my ability.
+        required: true
+      - label: This only contains 1 feature request (if you have multiple feature requests, open one feature request for each feature request).
+        required: true
+      - label: This issue is not a duplicate feature request of [previous feature requests](https://github.com/mathieu-mp/homeassistant-intex-spa/issues?q=is%3Aissue).
+        required: true

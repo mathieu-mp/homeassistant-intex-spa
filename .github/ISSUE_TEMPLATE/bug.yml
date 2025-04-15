@@ -8,7 +8,7 @@ body:
   attributes:
     value: Before you open a new issue, search through the existing issues to see if others have had the same problem.
 
-- type: textarea
+- type: input
   attributes:
     label: "Version of the custom_component"
     description: "Paste the version of your intex_spa integration page from Settings > Devices & Services"
