@@ -10,6 +10,30 @@ Intex brand is not involved in any way with this integration.
 
 Please read the [license] file before use, and the manufacturer documentation.
 
+## Compatibility
+
+This integration allows connection with the spas made to be used with the 'Intex Link - Spa Management' app (the one with the dark background).
+
+To identify if your spa is compatible with this integration, [check the back of the control panel and look for the code engraved on it](https://intexcompany.hr/en/faq/purespa/wifi-connection-new-app/) as referred to in the below sections.
+
+### Compatible version
+
+Your spa is compatible if the engraved code on the control panel **does not contain** the letters "TY", see the example below:
+
+![Compatible version image][img_backpanel_compatible]
+
+### Non-compatible version
+
+Your spa is not compatible if the engraved code on the control panel **does contain** the letters "TY", see the example below:
+
+![Compatible version image][img_backpanel_uncompatible]
+
+For these spa, please refer to the following discussions:
+1. [How to connect to the spa to your wifi][intex_link_wifi_discussion]
+1. [How to connect to the spa to Home Assistant via Local Tuya][intex_link_local_tuya_discussion]
+
+The most we can do here is refer you to these discussions. There will be no new feature implementing connection to these spas through this integration.
+
 ## What it does
 This integration relies on [Intex Spa Python package][intex_spa_package].\
 This integration connects to your spa via your local network, and does not rely on the cloud. Your spa just needs to be paired with your wifi[^0].
@@ -42,7 +66,7 @@ Platform | Entity | Description | Remarks
 
 ## Dashboard example
 
-![Screenshot][screenshot_img]
+![Screenshot][img_screenshot]
 
 ## Installation
 
@@ -86,10 +110,14 @@ The versioning of this integration follows Semantic Versioning 2.0.0
 [intex_spa_package]: https://github.com/mathieu-mp/intex-spa
 [hacs]: https://hacs.xyz/
 [hacsbadge]: https://img.shields.io/badge/HACS-Default-41BDF5.svg
-[screenshot_img]: https://raw.githubusercontent.com/mathieu-mp/homeassistant-intex-spa/main/screenshot_fr.png
+[img_screenshot]: assets/screenshot_fr.png
+[img_backpanel_compatible]: assets/backpanel_compatible.png
+[img_backpanel_uncompatible]: assets/backpanel_uncompatible.png
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [releases-shield]: https://img.shields.io/github/release/mathieu-mp/homeassistant-intex-spa.svg
-[releases]: https://github.com/mathieu-mp/homeassistant-intex-spa/releases
+[releases]: releases
 [devcontainer]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/mathieu-mp/homeassistant-intex-spa
 [devcontainer-badge]: https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode
-[esptouch_issue]: https://github.com/mathieu-mp/homeassistant-intex-spa/issues/51
+[esptouch_issue]: issues/51
+[intex_link_wifi_discussion]: https://community.home-assistant.io/t/intex-pure-spa-wifi-control/323591/120?u=mathieu-mp
+[intex_link_local_tuya_discussion]: https://community.home-assistant.io/t/intex-pure-spa-wifi-control/323591/118?u=mathieu-mp
