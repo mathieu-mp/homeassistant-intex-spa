@@ -51,7 +51,11 @@ class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
         HVACMode.HEAT,
         HVACMode.OFF,
     ]
-    _attr_supported_features = ClimateEntityFeature.TARGET_TEMPERATURE
+    _attr_supported_features = (
+        ClimateEntityFeature.TARGET_TEMPERATURE
+        | ClimateEntityFeature.TURN_ON
+        | ClimateEntityFeature.TURN_OFF
+    )
     _attr_target_temperature_step = 1
 
     def __init__(
@@ -123,3 +127,11 @@ class IntexSpaClimate(IntexSpaEntity, ClimateEntity):
             status = await self.coordinator.api.async_set_heater(True)
             self.coordinator.async_set_updated_data(status)
             return
+
+    async def async_turn_off(self) -> None:
+        """Turn climate off."""
+        await self.async_set_hvac_mode(HVACMode.OFF)
+
+    async def async_turn_on(self) -> None:
+        """Turn climate on."""
+        await self.async_set_hvac_mode(HVACMode.HEAT)
