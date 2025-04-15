@@ -135,9 +135,9 @@ The versioning of this integration follows Semantic Versioning 2.0.0
 [img_backpanel_uncompatible]: assets/backpanel_uncompatible.png
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [releases-shield]: https://img.shields.io/github/release/mathieu-mp/homeassistant-intex-spa.svg
-[releases]: releases
+[releases]: https://github.com/mathieu-mp/homeassistant-intex-spa/releases
 [devcontainer]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/mathieu-mp/homeassistant-intex-spa
 [devcontainer-badge]: https://img.shields.io/static/v1?label=Remote%20-%20Containers&message=Open&color=blue&logo=visualstudiocode
-[esptouch_issue]: issues/51
+[esptouch_issue]: https://github.com/mathieu-mp/homeassistant-intex-spa/issues/51
 [intex_link_wifi_discussion]: https://community.home-assistant.io/t/intex-pure-spa-wifi-control/323591/120?u=mathieu-mp
 [intex_link_local_tuya_discussion]: https://community.home-assistant.io/t/intex-pure-spa-wifi-control/323591/118?u=mathieu-mp
