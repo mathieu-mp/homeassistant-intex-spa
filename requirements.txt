@@ -1,7 +1,7 @@
 intex-spa==0.9.0
 aio-intex-spa==0.9.1
 colorlog==6.9.*
-pip==25.0.1
+pip==25.0.*
 ruff==0.9.*
 homeassistant==2024.3.*
 pytest-homeassistant-custom-component==0.13.*
