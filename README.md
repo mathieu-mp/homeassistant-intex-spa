@@ -16,13 +16,33 @@ This integration allows connection with the spas made to be used with the 'Intex
 
 To identify if your spa is compatible with this integration, [check the back of the control panel and look for the code engraved on it](https://intexcompany.hr/en/faq/purespa/wifi-connection-new-app/) as referred to in the below sections.
 
-### Compatible version
+### Compatible spas
+
+#### Firmware models
 
 Your spa is compatible if the engraved code on the control panel **does not contain** the letters "TY", see the example below:
 
 ![Compatible version image][img_backpanel_compatible]
 
-### Non-compatible version
+#### Hardware models
+
+The following hardware models are known to be compatible with this integration. In Home Assistant, you can manually disable the entities that your spa does not provide.
+
+| EU/US Model | EU Control Panel Part No. | EU Manual Ref. | [FR](https://www.intex.fr/shop/34-spa-gonflable)/[US](https://intexcorp.com/products/spas/purespa/) Name | Bubbles | Sanitizer | Jets |
+| :---: | :---: | :---: | :---: | :---: | :---: |  :---: |
+| 28440/28439 | 13035 | SB-HWF20 (352A) |  Baltik/Greywood 4p | X |
+| 28442/28441 | 13035 | SB-HWF20 (352A) | Baltik/Greywood 6p | X |
+| 28450/28449 | 13100 | SB-HSWF20 (353A) | Ardoise/- 4p | X | X |
+| 28452/28451 | 13100C | SB-HSWF20 (353A) | Ardoise/- 6p | X | X |
+| 28446/28445 | 13100 | SB-HSWF20 (353A) | Chevron 4p | X | X |
+| 28472/28471 | 13100C | SB-HSWF20 (353A) | Chevron 6p | X | X |
+| 28458/28457 | 13023 | SC-WF20 (351A) | Carbone/- 4p | X | X | X |
+| 28462/28461 | 13023 | SC-WF20 (351A) | Carbone/- 6p | X | X | X |
+| 28464/28463 | 13023C | SC-WF20-1 (357A) | Calacatta 4p | X | X | X |
+
+### Non-compatible spas
+
+#### Firmware models
 
 Your spa is not compatible if the engraved code on the control panel **does contain** the letters "TY", see the example below:
 
