@@ -16,24 +16,29 @@ This integration connects to your spa via your local network, and does not rely 
 
 This component will set up the following entities:
 
-Platform | Entity | Description | Entity status
+Platform | Entity | Description | Remarks
 :-- | :-- | :-- | :--
-`climate` | Spa | Climate controller for water heating
+`climate` | Spa | Climate controller for water heating | Does not provide the actual heating status [^2]
 `switch` | Power | Switch for toggling power state
 `switch` | Bubbles | Switch for toggling bubbles
 `switch` | Jets | Switch for toggling jets | To disable if your spa does not feature jets
 `switch` | Filter | Switch for toggling water filtering
 `switch` | Sanitizer | Switch for toggling water electrolysis | To disable if your spa does not feature a sanitizer
-`sensor` | Current Temperature | Sensor for current temperature (similar to climate entity 'current_temp' attribute) | Disabled by default[^1]
-`sensor` | Target Temperature | Sensor for target temperature (similar to climate entity 'target_temp' attribute) | Disabled by default[^1]
-`sensor` | UID | Unique ID of the spa | Disabled by default[^1]
+`sensor` | Current Temperature | Sensor for current temperature (similar to climate entity 'current_temp' attribute) | Disabled by default [^1]
+`sensor` | Target Temperature | Sensor for target temperature (similar to climate entity 'target_temp' attribute) | Disabled by default [^1]
+`sensor` | UID | Unique ID of the spa | Disabled by default [^1]
 `sensor` | Error | Eventual error code and explanation
 `sensor` | Error description | Eventual action to take to solve the error
-`sensor` | Error code | Eventual uppercase error code | Disabled by default[^1]
+`sensor` | Error code | Eventual uppercase error code | Disabled by default [^1]
 
 [^0]: Use the official Intex App to pair your Spa with your wifi network, or [try ESPTouch as suggested by @FreezyExp][esptouch_issue]
+
 [^1]: Some sensors are disabled by default because they are not needed by most of the users.
   There is no risk or side effect in enabling them if necessary.
+
+[^2]: The spa unit does not return the actual heating status.
+  As a workaround, this integration always pretends that the spa is heating when it is set to heat. This is required to indicate that the spa is not turned off, and is a common behavior to implement in this case.
+  As a result, do not use the hvac_action to calculate energy consumption (e.g. with the integral sensor helper) as it will not be relevant.
 
 ## Dashboard example
 
@@ -82,7 +87,7 @@ The versioning of this integration follows Semantic Versioning 2.0.0
 [hacs]: https://hacs.xyz/
 [hacsbadge]: https://img.shields.io/badge/HACS-Default-41BDF5.svg
 [screenshot_img]: https://raw.githubusercontent.com/mathieu-mp/homeassistant-intex-spa/main/screenshot_fr.png
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2025.svg
 [releases-shield]: https://img.shields.io/github/release/mathieu-mp/homeassistant-intex-spa.svg
 [releases]: https://github.com/mathieu-mp/homeassistant-intex-spa/releases
 [devcontainer]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/mathieu-mp/homeassistant-intex-spa
