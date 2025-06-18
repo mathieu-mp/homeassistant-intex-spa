@@ -1,7 +1,12 @@
+# Patch-version pinned packages
 intex-spa==0.9.0
 aio-intex-spa==0.9.1
-colorlog==6.9.*
-pip==25.1
-ruff==0.12.*
-homeassistant==2024.3.*
-pytest-homeassistant-custom-component==0.13.*
+
+# Minor-version pinned packages
+pip~=25.1.0
+colorlog~=6.9.0
+ruff~=0.12.0
+pytest-homeassistant-custom-component~=0.13.0
+
+# Not updated by Dependabot, because this matches the homeassistant key in hacs.json
+homeassistant~=2024.3.0
