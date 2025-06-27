@@ -10,7 +10,8 @@ from __future__ import annotations
 import logging
 
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import Config, HomeAssistant
+from homeassistant.core import HomeAssistant
+from homeassistant.core_config import Config
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from aio_intex_spa import IntexSpa, IntexSpaUnreachableException, IntexSpaDnsException
