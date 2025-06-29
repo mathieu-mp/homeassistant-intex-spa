@@ -10,7 +10,8 @@ from __future__ import annotations
 import logging
 
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.core import Config, HomeAssistant
+from homeassistant.core import HomeAssistant
+from homeassistant.helpers.typing import ConfigType
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
 from aio_intex_spa import IntexSpa, IntexSpaUnreachableException, IntexSpaDnsException
@@ -25,7 +26,7 @@ _LOGGER: logging.Logger = logging.getLogger(__package__)
 
 
 async def async_setup(
-    hass: HomeAssistant, config: Config  # pylint: disable=unused-argument
+    hass: HomeAssistant, config: ConfigType  # pylint: disable=unused-argument
 ) -> bool:
     """Set up this integration using YAML is not supported."""
     return True
