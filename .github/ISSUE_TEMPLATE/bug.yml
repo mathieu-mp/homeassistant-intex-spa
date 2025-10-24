@@ -47,8 +47,20 @@ body:
 - type: textarea
   attributes:
     label: "Debug logs"
-    description: "To enable debug logs check this https://www.home-assistant.io/integrations/logger/, this **needs** to include _everything_ from startup of Home Assistant to the point where you encounter the issue."
-    render: text
+    description: "Mandatory step. Paste debug logs here. FYI, HA logger docs: https://www.home-assistant.io/integrations/logger/"
+    placeholder: |
+      To enable debug logging:
+      1. add the following in your Home Assistant `config/configuration.yaml`:
+      ```yaml
+      logger:
+      default: warning # 'warning' is the default value
+      logs:
+          custom_components.intex_spa: debug
+          intex_spa: debug
+      ```
+      2. restart Home Assistant
+      3. and copy-paste here _everything_ from startup of Home Assistant to the point where you encounter the issue.
+    render: markdown
   validations:
     required: true
 
