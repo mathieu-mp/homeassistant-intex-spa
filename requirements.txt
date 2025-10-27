@@ -3,7 +3,7 @@ intex-spa==0.9.0
 aio-intex-spa==0.9.1
 
 # Minor-version pinned packages
-pip~=25.2
+pip~=25.3
 colorlog~=6.10.1
 ruff~=0.14.2
 pytest-homeassistant-custom-component~=0.13.0
